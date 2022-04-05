@@ -9,6 +9,7 @@
 html{
     font-size: 62.5%;
 }
+
 table {
     border-collapse: collapse;
     border: 1px solid silver;
@@ -19,18 +20,3 @@ th, td {
     border: 1px solid silver;
     padding:15px;
 }
-
-.cupcakeImgBox{
-    max-width: 130rem;
-    align-items: center;
-}
-
-.cupcakeImg {
-    width: 100%;
-}
-
-.navbar-right-items {
-    text-align: left;
-    float: left;
-}
-
