@@ -32,6 +32,7 @@
             </button>
 
             <div class="navbar-nav">
+                <a class="nav-item nav-link" href="${pageContext.request.contextPath}/index.jsp">Home</a>
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/#">Orders</a>
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/#">Customers</a>
             </div>

@@ -12,7 +12,7 @@ public class ConnectionPool
 {
     private HikariDataSource ds;
     private static String USER = "root";
-    private static String PASSWORD = "code123";
+    private static String PASSWORD = "";
     private static String URL = "jdbc:mysql://localhost:3306/cupcakeDatabase";
 
     public ConnectionPool()
