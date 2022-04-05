@@ -99,6 +99,9 @@ th, td {
 }
 
 .btn-index--full:link, .btn-index--full:visited{
+    background-color: #3c1460;
+    color: #fff;
+}
 
 
 

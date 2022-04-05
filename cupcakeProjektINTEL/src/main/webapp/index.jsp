@@ -21,7 +21,7 @@
                         </c:if>
 
                         <c:if test="${sessionScope.user == null}">
-                            <a href="${pageContext.request.contextPath}/" class="btn-index btn-index--full">Create User Here</a>
+                            <a href="${pageContext.request.contextPath}/createlogin.jsp" class="btn-index btn-index--full">Create User Here</a>
                             <a href="${pageContext.request.contextPath}/login.jsp" class="btn-index btn-index--login">Log In</a>
                         </c:if>
 
