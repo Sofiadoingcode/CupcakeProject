@@ -24,7 +24,7 @@
                 <%--<label for="password">Password: </label>--%>
             <input type="password" class="InputFields" id="password" name="password" placeholder="Password"/>
             <br>
-            <input type="text" class="InputFields" id="email" name="email" placeholder="Email"/>
+            <input type="text" class="InputFields" id="email" name="email" placeholder="  Email"/>
 
             <br>
 

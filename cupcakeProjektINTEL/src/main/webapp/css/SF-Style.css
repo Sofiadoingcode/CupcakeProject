@@ -35,22 +35,6 @@ th, td {
     float: left;
 }
 
-
-.btn--createandlogin:link, .btn--createandlogin:visited {
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.5rem 0.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-}
-
-.btn--createandlogin--full:link, .btn--createandlogin--full:visited{
-  background-color: #3c1460;
-  color: #fff;
-}
-
-
 .index-section{
     background-color: #ece8ef;
     padding: 6rem 0;
@@ -105,13 +89,7 @@ th, td {
 
 
 
-.InputFields{
-    width: 20rem;
-    height: 3rem;
-    border-radius: 10px;
-    margin-bottom: 7px;
-    border-color: gray;
-}
+
 
 .btn-index--login:link, .btn-index--login:visited{
     color: #333333;
