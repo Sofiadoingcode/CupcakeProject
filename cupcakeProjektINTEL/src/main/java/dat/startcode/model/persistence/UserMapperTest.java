@@ -1,5 +1,5 @@
-package dat.startcode.persistence;
-
+package dat.startcode.model.persistence;
+/*
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
@@ -42,7 +42,7 @@ class UserMapperTest
             }
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());
-            fail("Database connection failed");
+            Assertions.fail("Database connection failed");
         }
     }
 
@@ -50,7 +50,7 @@ class UserMapperTest
     void testConnection() throws SQLException
     {
         Connection connection = connectionPool.getConnection();
-        assertNotNull(connection);
+        Assertions.assertNotNull(connection);
         if (connection != null)
         {
             connection.close();
@@ -62,19 +62,19 @@ class UserMapperTest
     {
         User expectedUser = new User("user","1234","user");
         User actualUser = userMapper.login("user","1234");
-        assertEquals(expectedUser, actualUser);
+        Assertions.assertEquals(expectedUser, actualUser);
     }
 
     @Test
     void invalidPasswordLogin() throws DatabaseException
     {
-        assertThrows(DatabaseException.class, () -> userMapper.login("user","123"));
+        Assertions.assertThrows(DatabaseException.class, () -> userMapper.login("user","123"));
     }
 
     @Test
     void invalidUserNameLogin() throws DatabaseException
     {
-        assertThrows(DatabaseException.class, () -> userMapper.login("bob","1234"));
+        Assertions.assertThrows(DatabaseException.class, () -> userMapper.login("bob","1234"));
     }
 
     @Test
@@ -83,8 +83,9 @@ class UserMapperTest
         User newUser = userMapper.createUser("jill", "1234", "user", "j@jmail.com");
         User logInUser = userMapper.login("jill","1234");
         User expectedUser = new User("jill", "1234", "user");
-        assertEquals(expectedUser, newUser);
-        assertEquals(expectedUser, logInUser);
+        Assertions.assertEquals(expectedUser, newUser);
+        Assertions.assertEquals(expectedUser, logInUser);
 
     }
-}
+    }
+*/

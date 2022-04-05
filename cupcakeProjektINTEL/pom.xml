@@ -78,6 +78,11 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.11</version>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>popper.js</artifactId>
+            <version>1.12.9-1</version>
+        </dependency>
     </dependencies>
 
     <build>
