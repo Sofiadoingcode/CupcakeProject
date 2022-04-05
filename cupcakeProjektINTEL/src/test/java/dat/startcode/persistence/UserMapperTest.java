@@ -78,9 +78,9 @@ class UserMapperTest
     }
 
     @Test
-    void createUser() throws DatabaseException
+    void    createUser() throws DatabaseException
     {
-        User newUser = userMapper.createUser("jill", "1234", "user");
+        User newUser = userMapper.createUser("jill", "1234", "user", "j@jmail.com");
         User logInUser = userMapper.login("jill","1234");
         User expectedUser = new User("jill", "1234", "user");
         assertEquals(expectedUser, newUser);
