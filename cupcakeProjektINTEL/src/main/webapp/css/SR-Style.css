@@ -30,23 +30,14 @@ th, td {
     width: 100px; float:left; height:50px; margin:20px; margin-top: 20px;
 
 }
-.shoppingCartText{
-    font-size: 22px;
-}
 .shoppingCartHeaders{
     max-width: 100%;
     height:30px; margin:10px;
-
-}
-.shoppingCartHeaders2{
-    max-width: 100%;
-    height:30px; margin:10px;
-
 }
 #leftHeader{
-margin-left: 300px;
+margin-left: 700px;
 }
-#leftHeader2{
-    margin-left: 300px;
-}
+
+
+
 
