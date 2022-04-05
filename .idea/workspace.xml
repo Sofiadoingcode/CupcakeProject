@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e252979-7a14-4b41-ae55-1a1eda4894c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/checkout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SR-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SR-Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SrStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/shoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/shoppingCart.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,6 +158,7 @@
       <workItem from="1649153362081" duration="7800000" />
       <workItem from="1649161641564" duration="499000" />
       <workItem from="1649162884815" duration="67000" />
+      <workItem from="1649168675575" duration="486000" />
     </task>
     <servers />
   </component>

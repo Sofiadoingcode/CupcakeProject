@@ -5,7 +5,7 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Congratulations!
+        <h1 id="congratulations">Congratulations!</h1>
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -19,9 +19,9 @@
             <title>Checkout</title>
         </head>
         <body>
-        <p>You have successfully ordered some cupcakes </p>
+        <p class="checkoutText">You have successfully ordered some cupcakes. </p>
         <br>
-        <a href="${pageContext.request.contextPath}/index.jsp">Back to Frontpage</a>
+        <a class="checkoutText" href="${pageContext.request.contextPath}/index.jsp">Back to Frontpage</a>
         </body>
         </html>
 

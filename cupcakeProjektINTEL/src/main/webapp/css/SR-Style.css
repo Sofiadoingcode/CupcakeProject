@@ -20,7 +20,12 @@ th, td {
     border: 1px solid silver;
     padding:15px;
 }
-
+#congratulations{
+    font-size: 26px;
+}
+.checkoutText{
+    font-size: 18px ;
+}
 .shoppingCartHeader{
     width: 100px; float:left; height:50px; margin:20px; margin-top: 20px;
 
@@ -44,9 +49,4 @@ margin-left: 300px;
 #leftHeader2{
     margin-left: 300px;
 }
-#leftHeader3{
-    margin-left: 300px;
-}
-#leftHeader4{
-    margin-left: 300px;
-}
+
