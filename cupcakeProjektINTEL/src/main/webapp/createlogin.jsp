@@ -6,7 +6,7 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-             Log in
+             Create Log In
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -14,20 +14,25 @@
     </jsp:attribute>
 
     <jsp:body>
+
         <form action="login" method="post">
-            <%--<label for="username">Username: </label>--%>
+                <%--<label for="username">Username: </label>--%>
             <input type="text" class="InputFields" id="username" name="username" placeholder="Username"/>
             <br>
 
-            <%--<label for="password">Password: </label>--%>
-            <input type="text" class="InputFields" id="password" name="password" placeholder="Password"/>
+
+                <%--<label for="password">Password: </label>--%>
+            <input type="password" class="InputFields" id="password" name="password" placeholder="Password"/>
             <br>
-                <p>Don't have a user? <a href="createlogin.jsp">Create one! </a></p>
+            <input type="text" class="InputFields" id="email" name="email" placeholder="Email"/>
 
-                <br>
+            <br>
 
-                <a href="#" class="btn btn--createandlogin--full">Log In</a>
+            <p>Already have a user? <a href="login.jsp">Log in!</a></p>
 
+            <br>
+
+            <a href="#" class="btn btn--createandlogin--full">Create User Here</a>
         </form>
 
     </jsp:body>
