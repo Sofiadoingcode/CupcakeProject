@@ -20,11 +20,62 @@
     <title>ShoppingCart</title>
 </head>
 <body>
+<div class="shoppingCartHeaders">
+<div class="shoppingCartHeader" id="leftHeader">
+    <p class="shoppingCartText">Topping</p>
+</div>
+<div class="shoppingCartHeader">
+    <p class="shoppingCartText">Bottom</p>
+</div>
     <div class="shoppingCartHeader">
-        <p>Topping</p> <p style="margin-left: 200px">Bottom</p>
+        <p class="shoppingCartText">Amount</p>
     </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText">Price</p>
+    </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText"></p>
+    </div>
+</div>
+<div class="shoppingCartHeaders2">
+    <div class="shoppingCartHeader" id="leftHeader2">
+        <p class="shoppingCartText">Topping</p>
+    </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText">Bottom</p>
+    </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText">Amount</p>
+    </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText">Price</p>
+    </div>
+    <div class="shoppingCartHeader">
+        <p class="shoppingCartText"></p>
+    </div>
+    <div class="shoppingCartHeaders2">
+        <div class="shoppingCartHeader" id="leftHeader4">
+            <p class="shoppingCartText">Topping</p>
+        </div>
+        <div class="shoppingCartHeader">
+            <p class="shoppingCartText">Bottom</p>
+        </div>
+        <div class="shoppingCartHeader">
+            <p class="shoppingCartText">Amount</p>
+        </div>
+        <div class="shoppingCartHeader">
+            <p class="shoppingCartText">Price</p>
+        </div>
+        <div class="shoppingCartHeader">
+            <p class="shoppingCartText"></p>
+        </div>
+    <div class="shoppingCartHeaders">
+    <div class="shoppingCartHeader" id="leftHeader3">
+        <a class="shoppingCartText" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
+    </div>
+</div>
+</div>
 
-<a href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
 </body>
 </html>
     </jsp:body>
