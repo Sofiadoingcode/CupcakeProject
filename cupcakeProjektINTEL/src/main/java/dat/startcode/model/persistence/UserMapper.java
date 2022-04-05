@@ -20,23 +20,30 @@ public class UserMapper implements IUserMapper
     public User login(String username, String password) throws DatabaseException
     {
         Logger.getLogger("web").log(Level.INFO, "");
-
+        System.out.println("a");
         User user = null;
 
-        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
-
+        String sql = "SELECT * FROM `user` WHERE username = ? AND password = ?";
+        System.out.println("b");
         try (Connection connection = connectionPool.getConnection())
         {
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
+                System.out.println("c");
                 ps.setString(1, username);
+                System.out.println("1a");
                 ps.setString(2, password);
+                System.out.println("1b");
                 ResultSet rs = ps.executeQuery();
+                System.out.println("1c");
                 if (rs.next())
                 {
-                    String email = rs.getString("email");
+
+                    System.out.println("1d");
                     String role = rs.getString("role");
-                    user = new User(username, password, role, email);
+                    System.out.println("d");
+                    user = new User(username, password, role);
+                    System.out.println("e");
 
                 } else
                 {
@@ -47,6 +54,7 @@ public class UserMapper implements IUserMapper
         {
             throw new DatabaseException(ex, "Error logging in. Something went wrong with the database");
         }
+        System.out.println("f");
         return user;
     }
 
