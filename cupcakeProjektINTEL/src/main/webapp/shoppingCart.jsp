@@ -31,22 +31,22 @@
 
 
         </thead>
-        <c:forEach var="orders" items="${requestScope.orders}">
+        <c:forEach var="orders" items="${sessionScope.basket}">
             <tr class="orders-tr">
 
                 <td>${orders.topping}</td>
                 <td>${orders.bottom}</td>
-                <td><div class="amount">
+                <td>
                     <button class="btn-add" type="button" name="button">
                         <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
                     </button>
-                    <input type="text" name="amount" value="1">
+                    <input type="text" name="amount" value="${orders.quantity}">
                     <button class="btn-minus" type="button" name="button">
                         <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
                     </button>
-                </div></td>
+                </td>
 
-                <td>${order.totalPrice}</td>
+                <td>${orders.totalPrice}</td>
                 <td>
                     <div class="cartButtons">
                         <span class="btn-remove"></span>

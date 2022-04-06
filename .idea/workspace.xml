@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/OrderLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/OrderLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/entities/orderLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/entities/OrderLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/shoppingCart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/shoppingCart.jsp" afterDir="false" />
     </list>
