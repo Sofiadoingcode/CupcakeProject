@@ -52,8 +52,8 @@
 
 
 
-    <div class="shoppingCartHeaders">
-    <div class="shoppingCartHeader" id="leftHeader">
+    <div class="checkout-btn-div">
+    <div class="checkout-btn" id="leftHeader">
         <a class="shoppingCartText btn-index btn-index--full" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
 </div>
