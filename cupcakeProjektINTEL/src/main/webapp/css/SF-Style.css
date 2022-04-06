@@ -1,5 +1,6 @@
 /* CSS stylesheet  for application */
 
+
 *{
     padding: 0;
     margin: 0;
@@ -10,16 +11,28 @@ html{
     font-size: 62.5%;
 }
 
-table {
-    border-collapse: collapse;
+.orders-table, .orders-td{
+    /*border-collapse: collapse;*/
+    font-size: 1.2rem;
     border: 1px solid silver;
     padding:15px;
+    width: 100%;
+    text-align: center;
+
 }
 
-th, td {
-    border: 1px solid silver;
-    padding:15px;
+.orders-tr:nth-child(even) {
+    background-color: #ece8ef;
 }
+
+.orders-th {
+    height: 50px;
+    font-weight: bold;
+    background-color: #634380;
+    color: white;
+    font-size: 1.3rem;
+}
+
 
 .index-cupcakeImgBox{
     max-width: 130rem;
@@ -37,7 +50,7 @@ th, td {
 
 .index-section{
     background-color: #ece8ef;
-    padding: 6rem 0;
+    padding: 6rem 5rem;
 }
 
 .index-box {
@@ -88,9 +101,6 @@ th, td {
 }
 
 
-
-
-
 .btn-index--login:link, .btn-index--login:visited{
     color: #333333;
 }
@@ -100,3 +110,51 @@ th, td {
     background-color: #361256;
 
 }
+
+
+.orders-header-box {
+
+    margin-bottom: 3.2rem;
+}
+
+.orders-header {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+.orders-btn {
+    border: none;
+    color: white;
+    padding: 7px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+    /*background-color: #634380;*/
+    transition: all 0.3s;
+}
+
+.orders-btn--right-margin {
+    margin-right: 5px;
+}
+
+.orders-complete{
+    background-color: limegreen;
+}
+
+.orders-delete{
+    background-color: red;
+}
+
+.orders-complete:hover, .orders-complete:active{
+    background-color: #28a428;
+
+}
+.orders-delete:hover, .orders-delete:active{
+    background-color: #cc0000;
+
+}
+
