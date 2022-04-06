@@ -1,13 +1,13 @@
 package dat.startcode.model.entities;
 
-public class orderLine {
+public class OrderLine {
     private String topping;
     private String bottom;
     private int unitPrice;
     private int quantity;
     private int idOrder;
 
-    public orderLine(String topping, String bottom, int quantity){
+    public OrderLine(String topping, String bottom, int quantity){
     this.topping=topping;
     this.bottom=bottom;
     this.quantity=quantity;
@@ -35,5 +35,17 @@ public class orderLine {
 
     public String getTopping() {
         return topping;
+    }
+
+
+    @Override
+    public String toString() {
+        return "OrderLine{" +
+                "topping='" + topping + '\'' +
+                ", bottom='" + bottom + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", quantity=" + quantity +
+                ", idOrder=" + idOrder +
+                '}';
     }
 }

@@ -15,7 +15,7 @@
 
     <jsp:body>
 
-        <form action="">
+        <form action="order" method="post">
             <div class="custom-select" style="width: 200px">
                 <label for="bottom">Choose a topping:</label>
                 <select id="bottom" name=bottom>

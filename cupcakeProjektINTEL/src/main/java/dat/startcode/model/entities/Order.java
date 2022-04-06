@@ -7,14 +7,14 @@ public class Order {
     private int userId;
     private int totalPrice;
     private boolean isCompleted;
-    private ArrayList<orderLine> orderLines;
+    private ArrayList<OrderLine> OrderLines;
 
-    public Order(int orderId, int userId, int totalPrice, boolean isCompleted, ArrayList<orderLine> orderLines) {
+    public Order(int orderId, int userId, int totalPrice, boolean isCompleted, ArrayList<OrderLine> OrderLines) {
         this.orderId = orderId;
         this.userId = userId;
         this.totalPrice = totalPrice;
         this.isCompleted = isCompleted;
-        this.orderLines=orderLines;
+        this.OrderLines = OrderLines;
     }
 
     public int getOrderId() {
