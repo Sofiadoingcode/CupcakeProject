@@ -72,7 +72,6 @@
         <a class="shoppingCartText btn-index btn-index--full" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
 </div>
-</div>
 
 </body>
 </html>

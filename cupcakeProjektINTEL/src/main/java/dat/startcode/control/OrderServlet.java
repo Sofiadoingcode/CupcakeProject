@@ -56,7 +56,7 @@ ConnectionPool connectionPool;
         }
 
         session.setAttribute("basket",basket);
-        request.getRequestDispatcher("order.jsp").forward(request, response);
+        request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
 
     }
 }
