@@ -20,7 +20,13 @@
     <title>ShoppingCart</title>
 </head>
 <body class="cartBody">
+<p>Hello</p>
+
+
 <div class="shoppingCart">
+
+
+
     <table class="orders-table">
         <thead class="orders-th">
         <td>Topping</td>
@@ -37,6 +43,7 @@
                 <td>${orders.topping}</td>
                 <td>${orders.bottom}</td>
                 <td>
+
                     <button class="btn-add" type="button" name="button">
                         <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
                     </button>
@@ -44,9 +51,10 @@
                     <button class="btn-minus" type="button" name="button">
                         <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
                     </button>
+
                 </td>
 
-                <td>${orders.totalPrice}</td>
+
                 <td>
                     <div class="cartButtons">
                         <span class="btn-remove"></span>

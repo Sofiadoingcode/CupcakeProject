@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "order", value = "/order")
 public class OrderServlet extends HttpServlet {
@@ -29,7 +30,7 @@ ConnectionPool connectionPool;
 
 
 
-        ArrayList<OrderLine> basket = (ArrayList<OrderLine>) session.getAttribute("basket");
+        List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
         basket.add(new OrderLine(request.getParameter("topping"),request.getParameter("bottom"),Integer.parseInt(request.getParameter("quantity") )));
 
@@ -46,7 +47,7 @@ ConnectionPool connectionPool;
         response.setContentType("text/html");
         HttpSession session = request.getSession();
 
-        ArrayList<OrderLine> basket = (ArrayList<OrderLine>) session.getAttribute("basket");
+        List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
         basket.add(new OrderLine(request.getParameter("topping"),request.getParameter("bottom"),Integer.parseInt(request.getParameter("quantity"))) );
        // basket.add(new OrderLine("strawberry","chocolate",2) );
