@@ -17,14 +17,14 @@
 
         <form action="AccountCreation" method="post">
                 <%--<label for="username">Username: </label>--%>
-            <input type="text" class="InputFields" id="username" name="username" placeholder="Username"/>
+            <input type="text" class="UsernameInputField" id="username" name="username" placeholder=" Username"/>
             <br>
 
 
                 <%--<label for="password">Password: </label>--%>
-            <input type="password" class="InputFields" id="password" name="password" placeholder="Password"/>
+            <input type="password" class="PasswordInputField" id="password" name="password" placeholder=" Password"/>
             <br>
-            <input type="text" class="InputFields" id="email" name="email" placeholder="  Email"/>
+            <input type="text" class="EmailInputField" id="email" name="email" placeholder=" Email"/>
 
             <br>
 

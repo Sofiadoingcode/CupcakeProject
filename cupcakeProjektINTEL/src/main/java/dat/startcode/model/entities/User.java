@@ -10,7 +10,7 @@ public class User
     private String email;
     private int balance;
 
-    public User(String username, String password, String role)
+    public User(String username, String password, String role) //Bruges ikke, kan slettes
     {
 
         this.username = username;
@@ -75,6 +75,14 @@ public class User
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
