@@ -20,7 +20,7 @@
             <br>
 
             <%--<label for="password">Password: </label>--%>
-            <input type="text" class="InputFields" id="password" name="password" placeholder="Password"/>
+            <input type="password" class="InputFields" id="password" name="password" placeholder="Password"/>
             <br>
 
         <p>Don't have a user? <a href="createlogin.jsp">Create one! </a></p>
