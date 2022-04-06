@@ -52,7 +52,7 @@ public class OrderMapper implements IOrderMapper{
         }
         catch (SQLException ex)
         {
-            throw new DatabaseException(ex, "Fejl under indlæsning af bøger og forfattere fra databasen");
+            throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
         }
         return orderListDTOList;
     }

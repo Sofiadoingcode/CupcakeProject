@@ -1,16 +1,20 @@
 package dat.startcode.model.entities;
 
+import java.util.ArrayList;
+
 public class Order {
     private int orderId;
     private int userId;
     private int totalPrice;
     private boolean isCompleted;
+    private ArrayList<orderLine> orderLines;
 
-    public Order(int orderId, int userId, int totalPrice, boolean isCompleted) {
+    public Order(int orderId, int userId, int totalPrice, boolean isCompleted, ArrayList<orderLine> orderLines) {
         this.orderId = orderId;
         this.userId = userId;
         this.totalPrice = totalPrice;
         this.isCompleted = isCompleted;
+        this.orderLines=orderLines;
     }
 
     public int getOrderId() {

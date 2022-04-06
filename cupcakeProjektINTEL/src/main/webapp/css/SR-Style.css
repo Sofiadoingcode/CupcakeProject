@@ -56,19 +56,27 @@ th, td {
     padding: 20px 30px;
     height: 60px;
     display: flex;
-    margin-left: 80px;
-    font-size: 16px;
+
+    font-size: 18px;
     font-weight: bold;
 }
+.cartHeaders span{
+    margin-right: 90px;
+}
+.cupcakeOrder div{
+
+}
+
 .cupcakeOrder {
     padding: 20px 30px;
     height: 80px;
     display: flex;
 }
 
-.cupcakeOrder:nth-child(3) {
-    border-top:  1px solid #E1E8EE;
-    border-bottom:  1px solid #E1E8EE;
+.cupcakeOrder:nth-child(2) {
+    border-top:  1px solid #43484D;
+    border-bottom:  1px solid #43484D;
+    background-color: #E1E8EE;
 }
 .cartButtons {
     position: relative;
@@ -126,6 +134,7 @@ button[class*=btn] {
     border: none;
     cursor: pointer;
 }
+
 .btn-minus img {
     max-width: 10px;
     max-height: 10px;
