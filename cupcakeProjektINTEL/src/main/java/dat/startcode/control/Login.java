@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -51,7 +52,7 @@ public class Login extends HttpServlet
             user = userMapper.login(username, password);
             session = request.getSession();
             session.setAttribute("user", user); // adding user object to session scope
-            ArrayList<OrderLine> basket = new ArrayList<>();
+            List<OrderLine> basket = new ArrayList<>();
             session.setAttribute("basket",basket);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
