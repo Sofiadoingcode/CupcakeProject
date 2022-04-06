@@ -8,6 +8,7 @@ public class User
     private String password;
     private String role;
     private String email;
+    private int balance;
 
     public User(String username, String password, String role)
     {
@@ -17,22 +18,24 @@ public class User
         this.role = role;
     }
 
-    public User(String username, String password, String role, String email)
+    public User(String username, String password, String role, String email, int balance)
     {
         this.email = email;
         this.username = username;
         this.password = password;
         this.role = role;
+        this.balance = balance;
     }
 
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "User{" +
-                "brugerNavn='" + username + '\'' +
-                ", kodeord='" + password + '\'' +
-                ", rolle='" + role + '\'' +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", email='" + email + '\'' +
+                ", balance=" + balance +
                 '}';
     }
 
@@ -64,6 +67,14 @@ public class User
     public void setRole(String role)
     {
         this.role = role;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     @Override

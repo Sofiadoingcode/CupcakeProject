@@ -23,7 +23,7 @@
 <header>
     <div class="cupcakeImgBox">
         <a href="index.jsp">
-            <img src="${pageContext.request.contextPath}/images/olskercupcakesHEADER.png" class="cupcakeImg"/>
+            <img src="${pageContext.request.contextPath}/images/olskercupcakesImprovedHEADER.png" class="cupcakeImg"/>
         </a>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -15,7 +15,7 @@
 
     <jsp:body>
 
-        <form action="login" method="post">
+        <form action="AccountCreation" method="post">
                 <%--<label for="username">Username: </label>--%>
             <input type="text" class="InputFields" id="username" name="username" placeholder="Username"/>
             <br>
@@ -32,7 +32,7 @@
 
             <br>
 
-            <a href="#" class="btn btn--createandlogin--full">Create User Here</a>
+            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="Confirm">
         </form>
 
     </jsp:body>
