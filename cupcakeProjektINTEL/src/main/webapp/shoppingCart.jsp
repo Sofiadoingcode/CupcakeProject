@@ -21,33 +21,48 @@
 </head>
 <body class="cartBody">
 <div class="shoppingCart">
-    <div class="cartHeaders">
-        <span>Topping</span>
-        <span>Bottom</span>
-        <span>Amount</span>
-        <span>Price</span>
-        <span></span>
-    </div>
-    <div class="cupcakeOrder">
-        <div class="topping">
-            <span>Strawberry</span>
-        </div>
-        <div class="bottom">
-            <span>Chocolate</span>
-        </div>
-        <div class="amount">
-            <button class="btn-add" type="button" name="button">
-                <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
-            </button>
-            <input type="text" name="amount" value="1">
-            <button class="btn-minus" type="button" name="button">
-                <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
-            </button>
-        </div>
-        <div class="total-price">20kr</div>
-        <div class="cartButtons">
-            <span class="btn-remove"></span>
-        </div>
+    <table class="orders-table">
+        <thead class="orders-th">
+        <td>Topping</td>
+        <td>Bottom</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td></td>
+
+
+        </thead>
+        <c:forEach var="orders" items="${requestScope.orders}">
+            <tr class="orders-tr">
+
+                <td>${orders.topping}</td>
+                <td>${orders.bottom}</td>
+                <td><div class="amount">
+                    <button class="btn-add" type="button" name="button">
+                        <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
+                    </button>
+                    <input type="text" name="amount" value="1">
+                    <button class="btn-minus" type="button" name="button">
+                        <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
+                    </button>
+                </div></td>
+
+                <td>${order.totalPrice}</td>
+                <td>
+                    <div class="cartButtons">
+                        <span class="btn-remove"></span>
+                    </div>
+
+                </td>
+
+            </tr>
+        </c:forEach>
+
+
+    </table>
+
+
+
+
     </div>
 
 
