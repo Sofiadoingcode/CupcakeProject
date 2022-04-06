@@ -15,7 +15,7 @@
 
     <jsp:body>
 
-        <form action="">
+        <form action="order" method="post">
             <div class="custom-select" style="width: 200px">
                 <label for="bottom">Choose a topping:</label>
                 <select id="bottom" name=bottom>
@@ -46,7 +46,7 @@
                 </select></div>
 
             <label for="quantity">quantity:</label><br>
-            <input type="number"  style="width: 10rem" class="InputFields" id="quantity" name="quantity" placeholder="1">
+            <input type="number"  style="width: 10rem" class="InputFields" id="quantity" name="quantity" value="1">
 
 
             <input type="submit" class="btn--createandlogin btn--createandlogin--full" value="add to cart">

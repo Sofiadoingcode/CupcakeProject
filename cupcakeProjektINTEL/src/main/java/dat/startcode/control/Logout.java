@@ -18,6 +18,9 @@ public class Logout extends HttpServlet
     @Override
     public void init() throws ServletException
     {
+
+
+
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
