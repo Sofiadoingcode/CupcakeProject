@@ -1,9 +1,10 @@
 package dat.startcode.model.persistence;
-/*
+
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
 import dat.startcode.model.persistence.UserMapper;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,9 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserMapperTest
 {
-    private final static String USER = "root";
-    private final static String PASSWORD = "root";
-    private final static String URL = "jdbc:mysql://localhost:3306/startcode_test?serverTimezone=CET&allowPublicKeyRetrieval=true&useSSL=false";
+    private static String USER = "cphbusiness";
+
+    private static String PASSWORD = "code";
+
+    private final static String URL = "jdbc:mysql://localhost:3306/cupcakeDatabase?serverTimezone=CET&allowPublicKeyRetrieval=true&useSSL=false";
 
     private static ConnectionPool connectionPool;
     private static UserMapper userMapper;
@@ -37,8 +40,8 @@ class UserMapperTest
                 // Remove all rows from all tables
                 stmt.execute("delete from user");
                 // Indsæt et par brugere
-                stmt.execute("insert into user (username, password, role) " +
-                        "values ('user','1234','user'),('admin','1234','admin'), ('ben','1234','user')");
+                stmt.execute("insert into user (username, password, role, email) " +
+                        "values ('user','1234','user','a'),('admin','1234','admin','a'), ('ben','1234','user','a')");
             }
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());
@@ -88,4 +91,3 @@ class UserMapperTest
 
     }
     }
-*/
