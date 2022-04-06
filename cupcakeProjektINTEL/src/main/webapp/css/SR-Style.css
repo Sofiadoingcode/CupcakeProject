@@ -35,6 +35,10 @@ th, td {
     height:30px; margin:10px;
 }
 
+#quantity{
+    max-width: 30px;
+    text-align: center;
+}
 .cartBody{
     width: 100%;
     height: 100%;
@@ -51,6 +55,9 @@ th, td {
 
     display: flex;
     flex-direction: column;
+}
+#checkout-btn{
+    background-color: #28a428;
 }
 .cartHeaders{
     padding: 20px 30px;
@@ -72,7 +79,7 @@ th, td {
     height: 80px;
     display: flex;
 }
-
+.cupcakeOrder:nth-child(3),
 .cupcakeOrder:nth-child(2) {
     border-top:  1px solid #43484D;
     border-bottom:  1px solid #43484D;

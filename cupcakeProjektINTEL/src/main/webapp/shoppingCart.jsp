@@ -47,7 +47,7 @@
                     <button class="btn-add" type="button" name="button">
                         <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
                     </button>
-                    <input type="text" name="amount" value="${orders.quantity}">
+                    <input type="text" name="amount" id="quantity" value="${orders.quantity}">
                     <button class="btn-minus" type="button" name="button">
                         <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
                     </button>
@@ -64,20 +64,11 @@
 
             </tr>
         </c:forEach>
-
-
     </table>
-
-
-
-
     </div>
-
-
-
     <div class="checkout-btn-div">
     <div class="checkout-btn" id="leftHeader">
-        <a class="shoppingCartText btn-index btn-index--full" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
+        <a class="shoppingCartText btn-index btn-index--full" id="checkout-btn" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
 </div>
 
