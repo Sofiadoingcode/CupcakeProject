@@ -29,9 +29,6 @@
         <span></span>
     </div>
     <div class="cupcakeOrder">
-        <div class="cartButtons">
-            <span class="btn-remove"></span>
-        </div>
         <div class="topping">
             <span>Strawberry</span>
         </div>
@@ -48,6 +45,9 @@
             </button>
         </div>
         <div class="total-price">20kr</div>
+        <div class="cartButtons">
+            <span class="btn-remove"></span>
+        </div>
     </div>
 
 
