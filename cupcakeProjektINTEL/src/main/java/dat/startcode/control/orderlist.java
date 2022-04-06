@@ -16,34 +16,38 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet(name = "orderlist", urlPatterns = {"/orderlist"} )
+@WebServlet(name = "orderlist", value="")
 public class orderlist extends HttpServlet {
 
-    private ConnectionPool connectionPool;
+    private OrderMapper orderMapper;
 
     @Override
     public void init() throws ServletException
     {
-        this.connectionPool = ApplicationStart.getConnectionPool();
+        ConnectionPool connectionPool = ApplicationStart.getConnectionPool();
+        orderMapper = new OrderMapper(connectionPool);
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-        response.setContentType("text/html");
-        OrderMapper orderMapper = new OrderMapper(connectionPool);
-        List<OrderListDTO> orderListDTOList = null;
-
         try
         {
-            orderListDTOList = orderMapper.getAllNoneCompletedOrders();
+            List<OrderListDTO> orderListDTOList = orderMapper.getAllNoneCompletedOrders();
+
+            request.setAttribute("orders", orderListDTOList);
+            request.getRequestDispatcher("orderlist.jsp").forward(request, response);
         }
         catch (DatabaseException e)
         {
             Logger.getLogger("web").log(Level.SEVERE, e.getMessage());
+            request.setAttribute("fejlbesked", e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+
         }
 
-        request.setAttribute("orderlist", orderListDTOList);
-        request.getRequestDispatcher("orderlist.jsp").forward(request, response);
+        //check if we are actually getting something from the database
+
+
     }
 
     public void destroy()

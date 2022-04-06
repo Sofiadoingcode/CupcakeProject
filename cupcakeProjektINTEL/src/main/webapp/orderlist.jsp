@@ -11,6 +11,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page errorPage="error.jsp" isErrorPage="false" %>
 
+
 <t:pagetemplate>
     <jsp:attribute name="header">
 <%--         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
@@ -28,6 +29,7 @@
 
             <table class="orders-table">
                     <thead class="orders-th">
+                        <td>ID</td>
                         <td>USERNAME</td>
                         <td>EMAIL</td>
                         <td>ORDER</td>
@@ -35,33 +37,35 @@
                         <td>ACTION</td>
 
                     </thead>
+                    <c:forEach var="order" items="${requestScope.orders}">
+                        <tr class="orders-tr">
 
-                    <tr class="orders-tr">
-                        <c:forEach var="order" items="${requestScope.orderlist}">
-                            <td>${order.userUsername}</td>
-                            <td>${order.userEmail}</td>
-                            <td>
-                                <button type="button" class="btn-seeorder" data-toggle="modal" data-target="#orderModal">
-                                    See Order
-                                </button>
-                            </td>
-                            <td>${order.totalPrice}</td>
-                            <td>
-                                    <button type="button" class="orders-btn orders-complete orders-btn--right-margin" formaction="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                        </svg>
+                                <td>${order.orderId}</td>
+                                <td>${order.userUsername}</td>
+                                <td>${order.userEmail}</td>
+                                <td>
+                                    <button type="button" class="btn-seeorder" data-toggle="modal" data-target="#orderModal">
+                                        See Order
                                     </button>
+                                </td>
+                                <td>${order.totalPrice}</td>
+                                <td>
+                                        <button type="button" class="orders-btn orders-complete orders-btn--right-margin" formaction="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                            </svg>
+                                        </button>
 
-                                    <button type="button" class="orders-btn orders-delete" formaction="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </button>
+                                        <button type="button" class="orders-btn orders-delete" formaction="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </button>
 
-                            </td>
-                        </c:forEach>
-                    </tr>
+                                </td>
+
+                        </tr>
+                    </c:forEach>
 
 
             </table>
