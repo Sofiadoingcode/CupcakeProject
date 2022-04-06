@@ -43,6 +43,15 @@
             <div class="navbar-right-items">
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
+
+                        <c:if test="${sessionScope.user == null}">
+                            <p class="nav-item nav-link">Not logged in</p>
+                        </c:if>
+
+                        <c:if test="${sessionScope.user != null}">
+                            <p class="nav-item nav-link">Email: "${sessionScope.user.email}".</p>
+                        </c:if>
+
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/#">About us</a>
                         <c:if test="${sessionScope.user == null }">
                             <a class="nav-item nav-link" href="${pageContext.request.contextPath}/login.jsp">Login</a>

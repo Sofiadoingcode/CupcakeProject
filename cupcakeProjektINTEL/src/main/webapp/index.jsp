@@ -25,6 +25,12 @@
                             <a href="${pageContext.request.contextPath}/login.jsp" class="btn-index btn-index--login">Log In</a>
                         </c:if>
 
+                    <c:if test="${sessionScope.user != null && sessionScope.user.role == 'customer' }">
+                        <a href="${pageContext.request.contextPath}/order.jsp" class="btn-index btn-index--full">Order</a>
+
+                    </c:if>
+
+
                 </div>
                 <div class="index-image-box">
                     <img src="${pageContext.request.contextPath}/images/3Cupcakes-IMG.png" class="cupcakeImg3"/>
