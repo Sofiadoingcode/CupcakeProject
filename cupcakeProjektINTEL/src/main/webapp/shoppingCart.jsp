@@ -19,8 +19,15 @@
 <head>
     <title>ShoppingCart</title>
 </head>
-<body>
+<body class="cartBody">
 <div class="shoppingCart">
+    <div class="cartHeaders">
+        <span>Topping</span>
+        <span>Bottom</span>
+        <span>Amount</span>
+        <span>Price</span>
+        <span></span>
+    </div>
     <div class="cupcakeOrder">
         <div class="cartButtons">
             <span class="btn-remove"></span>
@@ -33,11 +40,11 @@
         </div>
         <div class="amount">
             <button class="btn-add" type="button" name="button">
-                <img src="plus.svg" alt="" />
+                <img src="https://icon-library.com/images/plus-icon-transparent/plus-icon-transparent-5.jpg" alt="" />
             </button>
             <input type="text" name="amount" value="1">
             <button class="btn-minus" type="button" name="button">
-                <img src="minus.svg" alt="" />
+                <img src="/images/minus.png" alt="" />
             </button>
         </div>
         <div class="total-price">20kr</div>
