@@ -40,11 +40,11 @@
         </div>
         <div class="amount">
             <button class="btn-add" type="button" name="button">
-                <img src="https://icon-library.com/images/plus-icon-transparent/plus-icon-transparent-5.jpg" alt="" />
+                <img src="https://cdn0.iconfinder.com/data/icons/ui-16px-perfect-megapack-line/16/82_Add-512.png" alt="" />
             </button>
             <input type="text" name="amount" value="1">
             <button class="btn-minus" type="button" name="button">
-                <img src="/images/minus.png" alt="" />
+                <img src="https://www.svgrepo.com/show/25409/minus-sign-of-a-line-in-horizontal-position.svg" alt="" />
             </button>
         </div>
         <div class="total-price">20kr</div>
