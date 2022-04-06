@@ -22,12 +22,10 @@
             <%--<label for="password">Password: </label>--%>
             <input type="text" class="InputFields" id="password" name="password" placeholder="Password"/>
             <br>
-                <p>Don't have a user? <a href="createlogin.jsp">Create one! </a></p>
 
+        <p>Don't have a user? <a href="createlogin.jsp">Create one! </a></p>
                 <br>
-
-                <a href="#" class="btn btn--createandlogin--full">Log In</a>
-
+        <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="Log in">
         </form>
 
     </jsp:body>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CupcakeProject.iml" filepath="$PROJECT_DIR$/.idea/CupcakeProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/cupcakeProjektINTEL/startcode.iml" filepath="$PROJECT_DIR$/cupcakeProjektINTEL/startcode.iml" />
     </modules>
   </component>

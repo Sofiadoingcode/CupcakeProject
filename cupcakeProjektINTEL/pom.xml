@@ -78,6 +78,17 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.11</version>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>popper.js</artifactId>
+            <version>1.12.9-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

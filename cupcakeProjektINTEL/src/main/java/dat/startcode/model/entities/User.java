@@ -7,14 +7,23 @@ public class User
     private String username;
     private String password;
     private String role;
+    private String email;
 
     public User(String username, String password, String role)
     {
+
         this.username = username;
         this.password = password;
         this.role = role;
     }
 
+    public User(String username, String password, String role, String email)
+    {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 
 
     @Override

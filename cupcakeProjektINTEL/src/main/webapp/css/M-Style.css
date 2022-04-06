@@ -21,16 +21,17 @@ th, td {
     padding:15px;
 }
 
-.btn--createandlogin:link, .btn--createandlogin:visited {
+.btn--createandlogin, .btn--createandlogin {
     display: inline-block;
     font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem 0.5rem;
     border-radius: 30px;
     text-decoration: none;
+    border-color: #3c1460;
 }
 
-.btn--createandlogin--full:link, .btn--createandlogin--full:visited{
+.btn--createandlogin--full, .btn--createandlogin--full{
     background-color: #3c1460;
     color: #fff;
 }
@@ -40,5 +41,5 @@ th, td {
     height: 3rem;
     border-radius: 10px;
     margin-bottom: 7px;
-    border-color: gray;
+    border-color: #3c1460;
 }

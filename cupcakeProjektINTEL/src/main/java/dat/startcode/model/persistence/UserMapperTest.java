@@ -1,9 +1,10 @@
-package dat.startcode.persistence;
+package dat.startcode.model.persistence;
 
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
 import dat.startcode.model.persistence.UserMapper;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,9 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserMapperTest
 {
-    private final static String USER = "root";
-    private final static String PASSWORD = "root";
-    private final static String URL = "jdbc:mysql://localhost:3306/startcode_test?serverTimezone=CET&allowPublicKeyRetrieval=true&useSSL=false";
+    private static String USER = "cphbusiness";
+
+    private static String PASSWORD = "code";
+
+    private final static String URL = "jdbc:mysql://localhost:3306/cupcakeDatabase?serverTimezone=CET&allowPublicKeyRetrieval=true&useSSL=false";
 
     private static ConnectionPool connectionPool;
     private static UserMapper userMapper;
@@ -37,12 +40,12 @@ class UserMapperTest
                 // Remove all rows from all tables
                 stmt.execute("delete from user");
                 // Indsæt et par brugere
-                stmt.execute("insert into user (username, password, role) " +
-                        "values ('user','1234','user'),('admin','1234','admin'), ('ben','1234','user')");
+                stmt.execute("insert into user (username, password, role, email) " +
+                        "values ('user','1234','user','a'),('admin','1234','admin','a'), ('ben','1234','user','a')");
             }
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());
-            fail("Database connection failed");
+            Assertions.fail("Database connection failed");
         }
     }
 
@@ -50,7 +53,7 @@ class UserMapperTest
     void testConnection() throws SQLException
     {
         Connection connection = connectionPool.getConnection();
-        assertNotNull(connection);
+        Assertions.assertNotNull(connection);
         if (connection != null)
         {
             connection.close();
@@ -62,29 +65,29 @@ class UserMapperTest
     {
         User expectedUser = new User("user","1234","user");
         User actualUser = userMapper.login("user","1234");
-        assertEquals(expectedUser, actualUser);
+        Assertions.assertEquals(expectedUser, actualUser);
     }
 
     @Test
     void invalidPasswordLogin() throws DatabaseException
     {
-        assertThrows(DatabaseException.class, () -> userMapper.login("user","123"));
+        Assertions.assertThrows(DatabaseException.class, () -> userMapper.login("user","123"));
     }
 
     @Test
     void invalidUserNameLogin() throws DatabaseException
     {
-        assertThrows(DatabaseException.class, () -> userMapper.login("bob","1234"));
+        Assertions.assertThrows(DatabaseException.class, () -> userMapper.login("bob","1234"));
     }
 
     @Test
-    void createUser() throws DatabaseException
+    void    createUser() throws DatabaseException
     {
-        User newUser = userMapper.createUser("jill", "1234", "user");
+        User newUser = userMapper.createUser("jill", "1234", "user", "j@jmail.com");
         User logInUser = userMapper.login("jill","1234");
         User expectedUser = new User("jill", "1234", "user");
-        assertEquals(expectedUser, newUser);
-        assertEquals(expectedUser, logInUser);
+        Assertions.assertEquals(expectedUser, newUser);
+        Assertions.assertEquals(expectedUser, logInUser);
 
     }
-}
+    }
