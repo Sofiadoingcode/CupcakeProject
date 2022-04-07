@@ -53,9 +53,7 @@
                     </button>
 
                 </td>
-                <td>
-                    ${sessionScope.}
-                </td>
+
 
                 <td>
                     <div class="cartButtons">
