@@ -37,6 +37,49 @@ public class OrderLine {
         return topping;
     }
 
+public int getToppingId(){
+
+        switch (topping) {
+            case "Chocolate":
+                return 1;
+            case "Blueberry":
+                return 2;
+            case "Rasberry":
+                return 3;
+            case "Crispy":
+                return 4;
+            case "Strawberry":
+                return 5;
+            case "Rum/Raisin":
+                return 6;
+            case "Orange":
+                return 7;
+            case "Lemon":
+                return 8;
+            case "Bluecheese":
+                return 9;
+
+        }
+        return 0;
+}
+
+    public int getBottomID(){
+
+        switch (bottom) {
+            case "Chocolate":
+                return 1;
+            case "Vanilla":
+                return 2;
+            case "Nutmeg":
+                return 3;
+            case "Pistacio":
+                return 4;
+            case "Almond":
+                return 5;
+
+        }
+        return 0;
+    }
 
     @Override
     public String toString() {

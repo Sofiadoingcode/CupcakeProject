@@ -1,6 +1,8 @@
 package dat.startcode.model.persistence;
 
 import dat.startcode.model.DTOs.OrderListDTO;
+import dat.startcode.model.entities.OrderLine;
+import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 
 import java.sql.Connection;
@@ -120,6 +122,7 @@ public class OrderMapper implements IOrderMapper{
         return orderListDTOList;
     }
 
+
     @Override
     public boolean deleteOrder(int orderId) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
@@ -144,6 +147,30 @@ public class OrderMapper implements IOrderMapper{
             throw new DatabaseException("Elementet blev ikke fjernet");
         }
         return isDeleted;
+
+    }
+
+
+    public void insertOrder(User user, List<OrderLine> basket) throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+
+        //String sql0 = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES ( ?, 0)" ;
+        String sql1 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (? ,?, ?)";
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql1))
+            {
+
+            }
+
+            for(int i =0; i< basket.toArray().length; i++ ){
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DatabaseException(ex, "Error inserting order into table");
+        }
 
     }
 

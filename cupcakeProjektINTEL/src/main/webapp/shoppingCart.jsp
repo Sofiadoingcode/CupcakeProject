@@ -67,6 +67,13 @@
     </table>
     </div>
     <div class="checkout-btn-div">
+        <form action="Checkout" method="post">
+
+
+            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="checkout">
+        </form>
+
+
     <div class="checkout-btn" id="leftHeader">
         <a class="shoppingCartText btn-index btn-index--full" id="checkout-btn" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
