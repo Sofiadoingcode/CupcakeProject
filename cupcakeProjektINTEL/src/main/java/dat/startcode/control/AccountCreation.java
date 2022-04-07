@@ -33,7 +33,7 @@ public class AccountCreation extends HttpServlet {
         int balance = 0;
         UserMapper userMapper = new UserMapper(connectionPool);
         try {
-            userMapper.createUser(username, password, "customer", email, 500);
+            userMapper.createUser(username, password, "customer", email, 300);
         } catch (DatabaseException e) {
             e.printStackTrace();
         }

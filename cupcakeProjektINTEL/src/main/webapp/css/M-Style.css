@@ -65,3 +65,18 @@ th, td {
     color: black;
     text-indent: 5px;
 }
+
+.row{
+    width: 50rem;
+}
+
+.AboutUsPictures{
+    height: 150px;
+    width: 150px;
+}
+
+.card{
+    width: 200px;
+}
+
+.sectionCust
