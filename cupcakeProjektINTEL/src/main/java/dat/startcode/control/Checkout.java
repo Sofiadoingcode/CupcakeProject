@@ -39,19 +39,17 @@ public class Checkout extends HttpServlet {
 
         User user = (User) session.getAttribute("user");
 
-        System.out.println("First Sout");
+        
         response.setContentType("text/html");
-        int idKey =0;
+        int idKey = 0;
         Logger.getLogger("web").log(Level.INFO, "");
         List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
 
-        try (Connection connection = connectionPool.getConnection())
-        {
+        try (Connection connection = connectionPool.getConnection()) {
 
             String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES (?, 0) ";
-            try(PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
-            {
+            try (PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps1.setInt(1, user.getUserId());
                 int rowsAffected = ps1.executeUpdate();
 
@@ -62,48 +60,45 @@ public class Checkout extends HttpServlet {
                     idKey = generatedKeys.getInt(1);
                 }
 
-                System.out.println("id key is there" + idKey );
+               // System.out.println("id key is there" + idKey);
 
 
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 System.out.println(e);
 
             }
 
-           try {
+            try {
 
-               String sql2 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (?, ?,?, ?)";
-               for (OrderLine item : basket) {
+                String sql2 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (?, ?,?, ?)";
+                for (OrderLine item : basket) {
 
-                   PreparedStatement ps2 = connection.prepareStatement(sql2);
-
-
-
-                    ps2.setInt(1,item.getToppingId());
-                    ps2.setInt(2, item.getToppingId());
-                   ps2.setInt(3, item.getQuantity());
-                   ps2.setInt(4, idKey);
-                   ps2.executeUpdate();
+                    PreparedStatement ps2 = connection.prepareStatement(sql2);
 
 
+                    ps2.setInt(1, item.getToppingId());
+                    ps2.setInt(2, item.getBottomID());
+                    ps2.setInt(3, item.getQuantity());
+                    ps2.setInt(4, idKey);
+                    ps2.executeUpdate();
 
 
+                }
+            } catch (Exception E) {
 
-               }
-           }catch ( Exception E){
+                System.out.println(E);
+                System.out.println("dasohaofhasjoi FUCK ITS NOT WORKING AOH()y%`=(ij)?h#%");
 
-               System.out.println(E);
-               System.out.println("dasohaofhasjoi");
-
-           }
+            }
 
         } catch (SQLException ex) {
             System.out.println(ex + "error connecting to db");
             System.out.println("whydoes it not work");
         }
 
-
+        session.setAttribute("basket", new ArrayList<OrderLine>());
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
+
     }
 }
 

@@ -41,7 +41,7 @@
                     <option value="Rum/Raisin"> Rum/Raisin 7kr</option>
                     <option value="Orange"> Orange 8kr</option>
                     <option value="Lemon"> Lemon 8kr</option>
-                    <option value="BlueCheese"> Bluecheese 9kr</option>
+                    <option value="Bluecheese"> Bluecheese 9kr</option>
 
                 </select></div>
 
