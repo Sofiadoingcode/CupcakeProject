@@ -32,9 +32,10 @@ public class UserMapper implements IUserMapper {
                     String role = rs.getString("role");
                     String email = rs.getString("email");
                     int balance = rs.getInt("balance");
-                    int userId = rs.getInt("idUser");
-                    user = new User(username, password, role, email, balance);
-                } else {
+                    int id = rs.getInt("iduser");
+                    user = new User(username, password, role, email, balance, id);
+                } else
+                {
                     throw new DatabaseException("Wrong username or password");
                 }
             }
@@ -45,21 +46,34 @@ public class UserMapper implements IUserMapper {
     }
 
     @Override
-    public User createUser(String username, String password, String role, String email, int balance) throws DatabaseException {
+    public User createUser(String username, String password, String role, String email, int balance) throws DatabaseException
+    {
+        int idKey=0;
         Logger.getLogger("web").log(Level.INFO, "");
         User user;
         String sql = "insert into user (username, password, role, email, balance) values (?,?,?,?,?)";
-        try (Connection connection = connectionPool.getConnection()) {
-            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
+            {
                 ps.setString(1, username);
                 ps.setString(2, password);
                 ps.setString(3, role);
                 ps.setString(4, email);
                 ps.setInt(5, balance);
                 int rowsAffected = ps.executeUpdate();
-                if (rowsAffected == 1) {
-                    user = new User(username, password, role, email, balance);
-                } else {
+                ResultSet generatedKeys = ps.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    idKey = generatedKeys.getInt(1);
+                }
+
+                System.out.println("id key is there" + idKey );
+
+                if (rowsAffected == 1)
+                {
+                    user = new User(username, password, role, email, balance,idKey);
+                } else
+                {
                     throw new DatabaseException("The user with username = " + username + " could not be inserted into the database");
                 }
             }

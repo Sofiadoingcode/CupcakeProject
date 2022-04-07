@@ -19,8 +19,9 @@ public class User
         this.role = role;
     }
 
-    public User(String username, String password, String role, String email, int balance)
+    public User(String username, String password, String role, String email, int balance, int userId)
     {
+        this.userId = userId;
         this.email = email;
         this.username = username;
         this.password = password;
