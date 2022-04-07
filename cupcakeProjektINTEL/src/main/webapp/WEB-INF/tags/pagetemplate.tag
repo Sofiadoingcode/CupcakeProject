@@ -39,7 +39,7 @@
                 <c:if test="${sessionScope.user.role == 'admin'}">
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/orderlist">Orders</a>
 
-                <a class="nav-item nav-link" href="${pageContext.request.contextPath}/customers.jsp">Customers</a>
+                <a class="nav-item nav-link" href="${pageContext.request.contextPath}/customersservlet">Customers</a>
                 </c:if>
             </div>
 

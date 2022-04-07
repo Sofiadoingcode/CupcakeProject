@@ -1,9 +1,12 @@
 package dat.startcode.model.persistence;
 
+import dat.startcode.model.DTOs.OrderListDTO;
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -78,6 +81,65 @@ public class UserMapper implements IUserMapper
             throw new DatabaseException(ex, "Could not insert username into database");
         }
         return user;
+    }
+
+    @Override
+    public List<User> getAllCustomers() throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+
+        List<User> customerList = new ArrayList<>();
+
+        String sql = "SELECT idUser, username, email, balance FROM `user` where role='customer'";
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next())
+                {
+
+                    int userId = rs.getInt("idUser");
+                    String username = rs.getString("username");
+                    String email = rs.getString("email");
+                    int balance = rs.getInt("balance");
+                    User user = new User(userId,username,email,balance);
+                    customerList.add(user);
+                }
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
+        }
+        return customerList;
+    }
+
+    @Override
+    public boolean deleteUser(int userId) throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+
+        boolean isDeleted = false;
+        String sql = "delete from `user` where idUser = ?";
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1,userId);
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected == 1) {
+                    isDeleted = true;
+                } else {
+                    throw new DatabaseException("Elementet blev ikke fjernet");
+                }
+            } catch (SQLException e) {
+                throw new DatabaseException("Elementet blev ikke fjernet");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Elementet blev ikke fjernet");
+        }
+        return isDeleted;
     }
 
 
