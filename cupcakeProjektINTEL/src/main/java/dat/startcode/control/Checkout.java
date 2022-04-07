@@ -77,8 +77,9 @@ public class Checkout extends HttpServlet {
                    PreparedStatement ps2 = connection.prepareStatement(sql2);
 
 
-                   
 
+                    ps2.setInt(1,item.getToppingId());
+                    ps2.setInt(2, item.getToppingId());
                    ps2.setInt(3, item.getQuantity());
                    ps2.setInt(4, idKey);
                    ps2.executeUpdate();
@@ -101,7 +102,7 @@ public class Checkout extends HttpServlet {
         }
 
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
 }
 

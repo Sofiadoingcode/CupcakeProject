@@ -69,8 +69,8 @@
     <div class="checkout-btn-div">
         <form action="Checkout" method="post">
 
-            <button type="submit"> checkout</button>
-            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="checkkout">
+
+            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="checkout">
         </form>
 
 
