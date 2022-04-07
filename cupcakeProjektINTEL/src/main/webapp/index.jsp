@@ -26,7 +26,7 @@
                         </c:if>
 
                     <c:if test="${sessionScope.user != null && sessionScope.user.role == 'customer' }">
-                        <a href="${pageContext.request.contextPath}/index.jsp" class="btn-index btn-index--full">Order</a>
+                        <a href="${pageContext.request.contextPath}/order.jsp" class="btn-index btn-index--full">Order</a>
 
                     </c:if>
 

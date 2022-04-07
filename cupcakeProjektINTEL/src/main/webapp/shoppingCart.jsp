@@ -66,7 +66,7 @@
         </c:forEach>
     </table>
     </div>
-    <div class="checkout-btn-div">
+    <div class="checkout-btn">
         <form action="Checkout" method="post">
 
 
