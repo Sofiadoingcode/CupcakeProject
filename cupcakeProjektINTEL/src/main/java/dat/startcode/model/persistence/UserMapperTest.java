@@ -1,5 +1,4 @@
 package dat.startcode.model.persistence;
-package persistance;
 
 import dat.startcode.model.entities.Order;
 import dat.startcode.model.entities.OrderLine;
@@ -12,10 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +19,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserMapperTest
 {
-    private static String USER = "cphbusiness";
 
-    private static String PASSWORD = "code";
+    private static String USER = "root";
+
+    private static String PASSWORD = "Gothlolis123";
+
+    //private static String URL = "jdbc:mysql://localhost:3306/cupcakeDatabase";
+
+
 
     private final static String URL = "jdbc:mysql://localhost:3306/cupcakeDatabase?serverTimezone=CET&allowPublicKeyRetrieval=true&useSSL=false";
 
@@ -103,24 +104,36 @@ class UserMapperTest
     {
         Connection connection = connectionPool.getConnection();
         Assertions.assertNotNull(connection);
-        String sql0 = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES ( 2, 0)" ;
-        PreparedStatement ps = connection.prepareStatement(sql0, Statement.RETURN_GENERATED_KEYS);
+
+
         List<OrderLine> basket = new ArrayList<>();
 
         basket.add(new OrderLine("Strawberry", "Chocolate",2));
         basket.add(new OrderLine("Strawberry", "Chocolate",3));
+        String sql0 = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES ( 2, 0)" ;
 
 
 
 
-
-        ResultSet generatedKeys = ps.getGeneratedKeys();
-        int idKey = generatedKeys.getInt(1);
-
-        String sql1 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (? ,?, ?)";
-
+        try (PreparedStatement ps1 = connection.prepareStatement(sql0, Statement.RETURN_GENERATED_KEYS))
+        {
+            ResultSet generatedKeys = ps1.getGeneratedKeys();
+            int idKey = generatedKeys.getInt(1);
 
 
+            String sql1 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (2 ,2, 2, ?)";
+
+            PreparedStatement ps2 = connection.prepareStatement(sql1);
+            ps2.setInt(1,idKey);
+
+
+
+        }
+
+
+
+
+        Assertions.assertNotNull(connection);
         if (connection != null)
         {
             connection.close();
