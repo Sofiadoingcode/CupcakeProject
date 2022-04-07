@@ -10,17 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/aboutus.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/images/AboutUs/CashRegi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/images/AboutUs/CupcakeProject-Assistant.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/images/AboutUs/CupcakeProject-Baker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/images/AboutUs/CupcakeProject-CashRegisterEmployee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/AccountCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/AccountCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/WEB-INF/tags/pagetemplate.tag" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/WEB-INF/tags/pagetemplate.tag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/changePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/changePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -32,9 +32,11 @@ public class changePassword extends HttpServlet {
         String currentPassword = request.getParameter("password");
         String newPassword = request.getParameter("newPassword");
         User user = (User) session.getAttribute("user");
+        session.setAttribute("hasBeenThroughTheMatrix", false);
         if (session.getAttribute("typedCorrectPassword") == null || !((boolean) session.getAttribute("typedCorrectPassword"))) {
             if (currentPassword.equals(user.getPassword())) {
                 session.setAttribute("typedCorrectPassword", true);
+                session.setAttribute("hasBeenThroughTheMatrix", true);
             } else {
                 session.setAttribute("typedCorrectPassword", false);
             }
@@ -42,6 +44,8 @@ public class changePassword extends HttpServlet {
             try {
                 System.out.println("1");
                 userMapper.changePassword(newPassword, user.getUserId());
+                session.setAttribute("hasBeenThroughTheMatrix", false);
+
             } catch (DatabaseException e) {
                 e.printStackTrace();
             }

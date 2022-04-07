@@ -24,11 +24,13 @@
 
                 <p>Your email is: ${sessionScope.user.email}</p>
 
+                <c:if test="${sessionScope.hasBeenThroughTheMatrix == false || sessionScope.hasBeenThroughTheMatrix == null}">
                 <form action="changePassword" method="post">
                 <div>
                     <input type="text" class="PasswordInputField" id="password" name="password" placeholder=" Type your current password to change it">
                     <input type="submit" class="btn--createandlogin btn--createandlogin--full" value=" Confirm">
                 </div>
+                </c:if>
                     <c:if test="${sessionScope.typedCorrectPassword == true}">
 
                 <form action="changePassword" method="post">
