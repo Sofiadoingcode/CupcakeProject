@@ -49,9 +49,10 @@ public class Checkout extends HttpServlet {
         try (Connection connection = connectionPool.getConnection())
         {
 
-            String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES (3, 0) ";
+            String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES (?, 0) ";
             try(PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
+                ps1.setInt(1, user.getUserId());
                 int rowsAffected = ps1.executeUpdate();
 
 
