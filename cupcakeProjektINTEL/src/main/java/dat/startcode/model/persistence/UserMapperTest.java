@@ -1,5 +1,8 @@
 package dat.startcode.model.persistence;
+package persistance;
 
+import dat.startcode.model.entities.Order;
+import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
@@ -10,8 +13,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -90,4 +96,36 @@ class UserMapperTest
         Assertions.assertEquals(expectedUser, logInUser);
 
     }
+
+
+    @Test
+    void creatOrders() throws SQLException
+    {
+        Connection connection = connectionPool.getConnection();
+        Assertions.assertNotNull(connection);
+        String sql0 = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES ( 2, 0)" ;
+        PreparedStatement ps = connection.prepareStatement(sql0, Statement.RETURN_GENERATED_KEYS);
+        List<OrderLine> basket = new ArrayList<>();
+
+        basket.add(new OrderLine("Strawberry", "Chocolate",2));
+        basket.add(new OrderLine("Strawberry", "Chocolate",3));
+
+
+
+
+
+        ResultSet generatedKeys = ps.getGeneratedKeys();
+        int idKey = generatedKeys.getInt(1);
+
+        String sql1 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (? ,?, ?)";
+
+
+
+        if (connection != null)
+        {
+            connection.close();
+        }
     }
+
+
+}
