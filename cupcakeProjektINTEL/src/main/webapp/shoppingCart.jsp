@@ -52,9 +52,13 @@
                     </button>
 
                 </td>
+<<<<<<< HEAD
                 <td>
                     (${orders.toppingPrice}+${orders.bottomPrice})*${orders.quantity})
                 </td>
+=======
+
+>>>>>>> 7ce033f61646ad2b764fade87becf90ef203e2df
 
                 <td>
                     <button type="button" class="orders-btn orders-delete" formaction="#">
