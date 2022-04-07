@@ -36,20 +36,19 @@
 
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/index.jsp">Home</a>
+                <c:if test="${sessionScope.user.role == 'admin'}">
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/orderlist.jsp#">Orders</a>
+
                 <a class="nav-item nav-link" href="${pageContext.request.contextPath}/#">Customers</a>
+                </c:if>
             </div>
 
             <div class="navbar-right-items">
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
 
-                        <c:if test="${sessionScope.user == null}">
-                            <p class="nav-item nav-link">Not logged in</p>
-                        </c:if>
-
                         <c:if test="${sessionScope.user != null}">
-                            <p class="nav-item nav-link">Email: "${sessionScope.user.email}".</p>
+                            <p class="nav-item nav-link">${sessionScope.user.email}</p>
                         </c:if>
 
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/#">About us</a>
