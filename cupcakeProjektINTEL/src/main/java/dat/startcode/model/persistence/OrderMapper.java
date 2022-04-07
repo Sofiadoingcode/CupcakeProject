@@ -120,4 +120,32 @@ public class OrderMapper implements IOrderMapper{
         return orderListDTOList;
     }
 
+    @Override
+    public boolean deleteOrder(int orderId) throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+        boolean isDeleted = false;
+        String sql = "delete from `order` where idOrder = ?";
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1,orderId);
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected == 1) {
+                    isDeleted = true;
+                } else {
+                    throw new DatabaseException("Elementet blev ikke fjernet");
+                }
+            } catch (SQLException e) {
+                throw new DatabaseException("Elementet blev ikke fjernet");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Elementet blev ikke fjernet");
+        }
+        return isDeleted;
+
+    }
+
+
 }
