@@ -27,7 +27,7 @@ th, td {
     font-size: 18px ;
 }
 .checkout-btn-div{
-    width: 100px; float:left; height:50px; margin:20px; margin-top: 20px;
+    width: 100px; height:50px; margin-left: 280px;
 
 }
 .checkout-btn{
@@ -43,96 +43,29 @@ th, td {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: #3c1460;
+    background: url("https://th.bing.com/th/id/R.ed57afb35b8b09321eb90b4289c5b3ee?rik=3ZjOwsVWJFfRWw&riu=http%3a%2f%2fimages6.fanpop.com%2fimage%2fphotos%2f35900000%2fCupcakes-food-35972764-1920-1200.jpg&ehk=FgzvDX%2fF7jAYv68PKrdzD5qnoeKy40fsdJJiN2ePd74%3d&risl=&pid=ImgRaw&r=0");
 }
 .shoppingCart {
     width: 750px;
     height: 423px;
     margin: 80px auto;
+    margin-bottom: 20px;
     background: #FFFFFF;
     box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
     border-radius: 6px;
-
+    overflow-y:auto;
     display: flex;
     flex-direction: column;
 }
 #checkout-btn{
     background-color: #28a428;
 }
-.cartHeaders{
-    padding: 20px 30px;
-    height: 60px;
-    display: flex;
 
-    font-size: 18px;
-    font-weight: bold;
-}
-.cartHeaders span{
-    margin-right: 90px;
-}
-.cupcakeOrder div{
-
-}
-
-.cupcakeOrder {
-    padding: 20px 30px;
-    height: 80px;
-    display: flex;
-}
-.cupcakeOrder:nth-child(3),
-.cupcakeOrder:nth-child(2) {
-    border-top:  1px solid #43484D;
-    border-bottom:  1px solid #43484D;
-    background-color: #E1E8EE;
-}
-.cartButtons {
-    position: relative;
-    padding-top: 30px;
-    margin-right: 60px;
-}
 .btn-remove{
     display: inline-block;
     Cursor: pointer;
 }
-.btn-remove{
-    width: 18px;
-    height: 17px;
-    background: url(https://pic.onlinewebfonts.com/svg/img_425391.png) no-repeat center;
-}
-.topping,
-.bottom{
-padding-top: 10px;
-margin-right: 60px;
-width: 95px;
-}
 
-.topping span,
-.bottom span{
-    display: block;
-    font-size: 14px;
-    color: #43484D;
-    font-weight: 400;
-}
-.amount{
-    padding-top: 10px;
-    margin-right: 60px;
-}
-.amount input {
-    border: none;
-    text-align: center;
-    width: 32px;
-    font-size: 14px;
-    color: #43484D;
-    font-weight: 300;
-}
-.total-price {
-    width: 53px;
-    padding-top: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #43484D;
-    font-weight: 300;
-}
 button[class*=btn] {
     width: 25px;
     height: 25px;

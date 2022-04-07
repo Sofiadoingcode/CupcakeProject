@@ -19,29 +19,20 @@
             <div class="custom-select" style="width: 200px">
                 <label for="bottom">Choose a topping:</label>
                 <select id="bottom" name=bottom>
-
-                    <option value="Chocolate">Chocolate 5kr</option>
-                    <option value="Chocolate">Chocolate 5kr</option>
-                    <option value="Vanilla">Vanilla 5kr</option>
-                    <option value="Nutmeg">Nutmeg 5kr</option>
-                    <option value="Pistacio">Pistacio 6kr</option>
-                    <option value="Almond">Almond 7kr</option>
+                    <option value="0">Choose bottom</option>
+                    <c:forEach var="bottoms" items="${sessionScope.dropdownListBottom}">
+                    <option value="${bottoms.bottomId}">${bottoms.name} ${bottoms.price}kr.</option>
+                    </c:forEach>
                 </select>
             </div>
             <div class="custom-select" style="width: 200px">
                 <label for="topping">choose a topping:</label>
                 <select class="btn-index" id="topping" name="topping">
 
-                    <option value="Chocolate">Chocolate 5kr</option>
-                    <option value="Chocolate">Chocolate 5kr</option>
-                    <option value="Blueberry">Blueberry 5kr</option>
-                    <option value="Rasberry">Rasberry 5kr</option>
-                    <option value="Crispy">Crispy 6kr</option>
-                    <option value="Strawberry">Strawberry 7kr</option>
-                    <option value="Rum/Raisin"> Rum/Raisin 7kr</option>
-                    <option value="Orange"> Orange 8kr</option>
-                    <option value="Lemon"> Lemon 8kr</option>
-                    <option value="BlueCheese"> Bluecheese 9kr</option>
+                    <option value="0">Choose topping</option>
+                    <c:forEach var="toppings" items="${sessionScope.dropdownListTopping}">
+                        <option value="${toppings.toppingId}"> ${toppings.name} ${toppings.price}kr.</option>
+                    </c:forEach>
 
                 </select></div>
 
