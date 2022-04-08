@@ -10,20 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/startcode_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/startcode_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_popper_js_1_12_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/deleteOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/deleteOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/orderlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/orderlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/IOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/IOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SF-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SF-Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SR-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/SR-Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/orderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/orderlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/startcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/startcode.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ShoppingCart2" />
+        <entry key="$PROJECT_DIR$" value="Testconnection2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,7 +80,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
