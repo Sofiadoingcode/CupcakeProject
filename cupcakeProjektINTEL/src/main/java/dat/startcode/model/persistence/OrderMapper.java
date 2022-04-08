@@ -1,6 +1,8 @@
 package dat.startcode.model.persistence;
 
+import dat.startcode.model.DTOs.OrderLineDTO;
 import dat.startcode.model.DTOs.OrderListDTO;
+import dat.startcode.model.entities.Order;
 import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
@@ -197,6 +199,56 @@ public class OrderMapper implements IOrderMapper{
             throw new DatabaseException("Elementet blev ikke fjernet");
         }
         return isCompleted;
+    }
+
+    @Override
+    public List<OrderLineDTO> getSingleOrderOrderlines(int orderId) throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+
+        List<OrderLineDTO> orderLines = new ArrayList<>();
+
+        String sql = "SELECT idorderline, t.idtopping, t.name, b.idbottom, b.name, unitprice, quantity, idOrder FROM `orderline` INNER JOIN topping t USING(idtopping) INNER JOIN bottom b USING(idbottom) where idOrder = ?";
+
+
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+
+                ps.setInt(1,orderId);
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next())
+                {
+
+                    int idorderline = rs.getInt("idorderline");
+                    int toppingId = rs.getInt("idtopping");
+                    String toppingName= rs.getString(3);
+                    int bottomId = rs.getInt("idbottom");
+                    String bottomName = rs.getString(5);
+                    int unitprice = rs.getInt("unitprice");
+                    int quantity = rs.getInt("quantity");
+                    int idOrder = rs.getInt("idOrder");
+
+
+
+                    OrderLineDTO orderLineDTO;
+                    orderLineDTO = new OrderLineDTO(idorderline, unitprice, quantity, toppingId, toppingName, bottomId, bottomName, idOrder);
+                    orderLines.add(orderLineDTO);
+                }
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
+        }
+
+
+        return orderLines;
+
+
+
     }
 
     private int getIsCompleteValue(int orderId) throws DatabaseException {
