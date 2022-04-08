@@ -17,6 +17,8 @@ import java.util.List;
 public class OrderServlet extends HttpServlet {
     ConnectionPool connectionPool;
     private CupcakeMapper cupcakeMapper;
+    int orderLinePrice=0;
+    int orderPrice=0;
 
     @Override
     public void init() throws ServletException {
@@ -59,8 +61,14 @@ public class OrderServlet extends HttpServlet {
             String bottomName=orderLineDTO.getBottomName();
             int toppingPrice=orderLineDTO.getToppingPrice();
             int bottomPrice=orderLineDTO.getBottomPrice();
-            basket.add(new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity"))) );
+            orderLinePrice=(toppingPrice+bottomPrice)*Integer.parseInt(request.getParameter("quantity"));
+            basket.add(new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity")), orderLinePrice) );
+            orderPrice=0;
+            for(int i=0; i<basket.size(); i++){
+               orderPrice+=basket.get(i).getOrderLinePrice();
+            }
             session.setAttribute("basket",basket);
+            session.setAttribute("orderPrice",orderPrice);
             request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
         } catch (DatabaseException e) {
             e.printStackTrace();

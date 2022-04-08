@@ -52,13 +52,11 @@
                     </button>
 
                 </td>
-<<<<<<< HEAD
-                <td>
-                    (${orders.toppingPrice}+${orders.bottomPrice})*${orders.quantity})
-                </td>
-=======
 
->>>>>>> 7ce033f61646ad2b764fade87becf90ef203e2df
+                <td>
+                    ${orders.orderLinePrice}
+                </td>
+
 
                 <td>
                     <button type="button" class="orders-btn orders-delete" formaction="#">
@@ -74,12 +72,17 @@
     </table>
 
     </div>
+<section class="checkout-total-price">
+    <div class="total-price">
+        <p id="total-price-text">Total: ${sessionScope.orderPrice} kr.</p>
+    </div>
 <div class="checkout-btn-div">
-    <div class="checkout-btn" id="leftHeader">
+    <div class="checkout-btn">
         <a class="btn-index btn-index--full" id="checkout-btn" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
 </div>
 
+</section>
 </body>
 </html>
     </jsp:body>

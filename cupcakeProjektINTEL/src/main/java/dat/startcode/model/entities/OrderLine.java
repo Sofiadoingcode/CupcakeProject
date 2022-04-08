@@ -9,21 +9,15 @@ public class OrderLine {
     private int idOrder;
     private int bottomId;
     private int toppingId;
+    private int orderLinePrice;
 
-    public OrderLine(String toppingName, String bottomName, int toppingPrice, int bottomPrice, int quantity, int bottomId){
-    this.toppingName=toppingName;
-    this.bottomName=bottomName;
-        this.toppingPrice = toppingPrice;
-        this.bottomPrice = bottomPrice;
-        this.quantity=quantity;
-        this.bottomId = bottomId;
-    }
-    public OrderLine(String toppingName, String bottomName, int toppingPrice, int bottomPrice, int quantity){
+    public OrderLine(String toppingName, String bottomName, int toppingPrice, int bottomPrice, int quantity, int orderLinePrice){
         this.toppingName=toppingName;
         this.bottomName=bottomName;
         this.toppingPrice = toppingPrice;
         this.bottomPrice = bottomPrice;
         this.quantity=quantity;
+        this.orderLinePrice = orderLinePrice;
     }
 
     public int getIdOrder() {
@@ -99,5 +93,14 @@ public class OrderLine {
     public void setToppingId(int toppingId) {
         this.toppingId = toppingId;
     }
+
+    public int getOrderLinePrice() {
+        return orderLinePrice;
+    }
+
+    public void setOrderLinePrice(int orderLinePrice) {
+        this.orderLinePrice = orderLinePrice;
+    }
+
 }
 
