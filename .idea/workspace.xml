@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/aboutus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/aboutus.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +77,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Merved\Documents\GitHub\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bruger\Desktop\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images\SocialMedia" />
+      <recent name="C:\Users\Bruger\Desktop\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images" />
     </key>
   </component>
   <component name="RunManager">
