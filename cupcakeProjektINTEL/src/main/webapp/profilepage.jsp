@@ -6,7 +6,6 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-             Your Profile
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -15,44 +14,52 @@
 
     <jsp:body>
 
-        <section>
+        <section class="profilePage-section">
 
             <div>
-                <h1>Welcome, ${sessionScope.user.username}</h1>
+                <div>
+                    <section>
+                        <div class="profilePage-WelcomeMessage">
+                            <p>Welcome, <strong>${sessionScope.user.username}</strong>!</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="profilePage-information">
 
-                <p>You have ${sessionScope.user.balance} kr.- on your account!</p>
+                            <p>You have <strong>${sessionScope.user.balance}</strong> kr.- on your account!</p>
 
-                <p>Your email is: ${sessionScope.user.email}</p>
-
+                            <p>Your email is: <strong>${sessionScope.user.email}</strong></p>
+                        </div>
+                    </section>
+                </div>
                 <c:if test="${sessionScope.typedCorrectPassword == false || sessionScope.typedCorrectPassword == null}">
                 <form action="changePassword" method="post">
-                <div>
-                    <input type="text" class="PasswordInputField" id="password" name="password" placeholder=" Type your current password to change it">
-                    <input type="submit" class="btn--createandlogin btn--createandlogin--full" value=" Confirm">
-                </div>
-                </c:if>
+                    <div>
+                        <input type="password" class="PasswordInputField" id="password" name="password"
+                               placeholder=" Type your current password to change it">
+                        <input type="submit" class="btn--createandlogin btn--createandlogin--full" value=" Confirm">
+                    </div>
+                    </c:if>
                     <c:if test="${sessionScope.typedCorrectPassword == true}">
 
-                <form action="changePassword" method="post">
-                    <input type="password" class="PasswordInputField" id="newPassword" name="newPassword" placeholder="New password">
-                    <input type="submit" class="btn--createandlogin btn--createandlogin--full" value="Confirm">
-                    </c:if>
-                </form>
+                    <form action="changePassword" method="post">
+                        <input type="password" class="PasswordInputField" id="newPassword" name="newPassword"
+                               placeholder="New password">
+                        <input type="submit" class="btn--createandlogin btn--createandlogin--full" value="Confirm">
+                        </c:if>
+                    </form>
 
-                <c:if test="${sessionScope.typedCorrectPassword == false}">
+                    <c:if test="${sessionScope.typedCorrectPassword == false}">
                     <div>
                         <p>You typed an incorrect password!</p>
                     </div>
-                </c:if>
+                    </c:if>
 
 
-                <p></p>
+                    <p></p>
 
             </div>
         </section>
-
-
-
 
 
     </jsp:body>

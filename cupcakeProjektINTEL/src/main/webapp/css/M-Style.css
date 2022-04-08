@@ -79,4 +79,85 @@ th, td {
     width: 200px;
 }
 
-.sectionCust
+.aboutUs-section{
+    background-color: #ece8ef;
+    padding: 5rem 5rem 1rem 5rem;
+}
+
+.gapBetweenCards{
+    border-color: black;
+    border-width: medium;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.positionCards{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+
+    width: 10rem;
+    display: grid;
+}
+
+.middleCardSize{
+    /*width: 18rem;*/
+    /*height:  30rem;*/
+
+}
+
+.sideCardsSize{
+    width: 75%;
+    height: 75%;
+
+}
+
+
+.profilePage-section{
+    background-color: #ece8ef;
+    padding: 5rem 5rem 5rem;
+}
+
+.profilePage-information{
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+
+}
+
+.profilePage-WelcomeMessage{
+    font-size: 5rem;
+    color: #3c1460;
+
+}
+
+.shapeAroundAboutUsText{
+    width:62rem;
+    height: 10rem;
+    border-radius: 5%;
+    background-color: #ece8ef;
+    margin-bottom: 5rem;
+}
+
+.aboutUsPageHeader{
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #3c1460;
+    letter-spacing: -0.5px;
+    margin-bottom: 3.2rem;
+}
+
+.aboutUsPageText{
+    margin-left: 5px;
+    font-size: 2.25rem;
+}
+
+.socialLinks{
+    /*margin-left: 10rem;*/
+
+}
+
+.aboutUs-FooterSection{
+    background-color: #ece8ef;
+    padding: 1rem 1rem 5rem;
+}

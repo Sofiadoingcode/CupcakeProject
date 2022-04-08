@@ -80,6 +80,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Merved\Documents\GitHub\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bruger\Desktop\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images\SocialMedia" />
+      <recent name="C:\Users\Bruger\Desktop\CupcakeProject\cupcakeProjektINTEL\src\main\webapp\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
