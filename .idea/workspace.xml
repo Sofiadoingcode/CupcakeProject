@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/changePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/changePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/aboutus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/aboutus.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/css/M-Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/webapp/profilepage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

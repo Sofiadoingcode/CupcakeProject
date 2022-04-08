@@ -14,48 +14,58 @@
         <section class="aboutUs-section">
 
             <div class="centerText">
-                <h2 class="centerText">Olsker Cupcakes</h2>
-                <div class="centerText" class="descriptionText">
-                    <p> Text and more text Text and more text Text and more text Text and more textText and more
-                        textText and more textText and more text<br>Text and more textText and more textText and
-                        more
-                        textText and more textText and more text</p>
+                <h2 class="aboutUsPageHeader">OLSKER CUPCAKES</h2>
+                <div class="shapeAroundAboutUsText">
+                    <p class="aboutUsPageText"> Olsker Cupcakes is a great place for the whole family. You could be out celebration a birthday,
+                        <br>enjoying valentines day or just in need of a little snack after a hard day of work.
+                        <br>No matter what, you will always feel welcome in our humble shop.
+                        <br>
+                        <br>So if you are ever in need of joy, delicately placed within a cute little
+                        cupcake-form with sprinkles and a cherry on top, feel free to make an order and see your dreams come true.
+                    </p>
                 </div>
             </div>
+
+            <br>
+            <br>
             <section>
                 <div class="positionCards">
-                    <div class="card" class="middleCardSize">
+                    <div class="card" class="sideCardsSize">
                         <img src="images/AboutUs/CupcakeProject-Baker.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is not only our wonderful baker, but it is also his grandfather
-                                who is
-                                the
-                                founder of the shop. This is the founder of Olsker Cupcakes. <br>He fought through tough
+                            <h4 class="card-title">Our Beloved Baker</h4>
+                            <p class="card-text">This is not only our wonderful baker,
+                                but it is also the grandson of a priceless man. You see, his grandfather is the founder
+                                of Olsker Cupcakes. <br>He fought through tough
                                 terrain
                                 and wild animals to bring home the very recipe that makes our cupcakes, even to this
                                 day!
                             </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <p>Email: <strong>CoolBaker@gmail.com</strong></p>
+                            <p>Tlf: <strong>8591-8493</strong></p>
                         </div>
                     </div>
                     <div class="card" class="middleCardSize">
                         <img src="images/AboutUs/CashRegi.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h4 class="card-title">Cash Register Employee</h4>
+                            <p class="card-text">This mighty woman is one of the leading cash register workers in not
+                                only the country, but the entire continent. With her bare eyes, she can spot fake dollar
+                                bills over a mile away.</p>
+                            <p>Email: <strong>MoneyDealer@hotmail.com</strong></p>
+                            <p>Tlf: <strong>4201-0952</strong></p>
                         </div>
                     </div>
-                    <div class="card" class="middleCardSize">
+                    <div class="card" class="sideCardsSize">
                         <img src="images/AboutUs/CupcakeProject-Assistant.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the
-                                card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h4 class="card-title">Assistant Secretary</h4>
+                            <p class="card-text">Our lives could not continue to flourish, if not for our wonderful
+                                assistant. She is the clue that holds the entire establishment together and running.
+                                <br>Whether we need new supplies of deliveries or a customer needs advice in the middle
+                                of the night, she'll be there to take your call!</p>
+                            <p>Email: <strong>OnTheLine@coldmail.com</strong></p>
+                            <p>Tlf: <strong>4619-1952</strong></p>
                         </div>
                     </div>
                 </div>
