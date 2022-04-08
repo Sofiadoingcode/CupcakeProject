@@ -7,6 +7,7 @@ public class OrderListDTO {
     private int userID;
     private String userUsername;
     private String userEmail;
+    private String timeStamp;
 
     public OrderListDTO(int orderId, int totalPrice, int userID, String userUsername, String userEmail) {
         this.orderId = orderId;
@@ -14,6 +15,16 @@ public class OrderListDTO {
         this.userID = userID;
         this.userUsername = userUsername;
         this.userEmail = userEmail;
+
+    }
+
+    public OrderListDTO(int orderId, int totalPrice, int userID, String userUsername, String userEmail, String timeStamp) {
+        this.orderId = orderId;
+        this.totalPrice = totalPrice;
+        this.userID = userID;
+        this.userUsername = userUsername;
+        this.userEmail = userEmail;
+        this.timeStamp = timeStamp;
     }
 
     public int getOrderId() {
@@ -54,5 +65,17 @@ public class OrderListDTO {
 
     public void setUserID(int userID) {
         this.userID = userID;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderListDTO{" +
+                "orderId=" + orderId +
+                ", totalPrice=" + totalPrice +
+                ", userID=" + userID +
+                ", userUsername='" + userUsername + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", timeStamp='" + timeStamp + '\'' +
+                '}';
     }
 }
