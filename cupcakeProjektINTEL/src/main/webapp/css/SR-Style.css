@@ -62,6 +62,7 @@ th, td {
     Cursor: pointer;
 }
 
+
 .btn-add,
 .btn-minus{
     width: 25px;
@@ -123,5 +124,4 @@ th, td {
     transition: all 0.3s;
     color:#ffffff;
 }
-
 

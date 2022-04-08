@@ -20,6 +20,17 @@ public class OrderLine {
         this.orderLinePrice = orderLinePrice;
     }
 
+    public OrderLine(String toppingName, String bottomName, int toppingPrice, int bottomPrice, int quantity, int bottomId, int toppingId, int orderLinePrice) {
+        this.toppingName = toppingName;
+        this.bottomName = bottomName;
+        this.toppingPrice = toppingPrice;
+        this.bottomPrice = bottomPrice;
+        this.quantity = quantity;
+        this.bottomId = bottomId;
+        this.toppingId = toppingId;
+        this.orderLinePrice = orderLinePrice;
+    }
+
     public int getIdOrder() {
         return idOrder;
     }
@@ -34,8 +45,51 @@ public class OrderLine {
 
 
 
+/*
+public int getToppingId(){
 
+        switch (topping) {
+            case "Chocolate":
+                return 1;
+            case "Blueberry":
+                return 2;
+            case "Rasberry":
+                return 3;
+            case "Crispy":
+                return 4;
+            case "Strawberry":
+                return 5;
+            case "Rum/Raisin":
+                return 6;
+            case "Orange":
+                return 7;
+            case "Lemon":
+                return 8;
+            case "Bluecheese":
+                return 9;
 
+        }
+        return 0;
+}
+
+    public int getBottomID(){
+
+        switch (bottom) {
+            case "Chocolate":
+                return 1;
+            case "Vanilla":
+                return 2;
+            case "Nutmeg":
+                return 3;
+            case "Pistacio":
+                return 4;
+            case "Almond":
+                return 5;
+
+        }
+        return 0;
+    }
+*/
     @Override
     public String toString() {
         return "OrderLine{" +

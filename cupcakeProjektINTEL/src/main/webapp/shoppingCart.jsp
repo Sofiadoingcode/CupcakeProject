@@ -76,9 +76,17 @@
     <div class="total-price">
         <p id="total-price-text">Total: ${sessionScope.orderPrice} kr.</p>
     </div>
-<div class="checkout-btn-div">
+
     <div class="checkout-btn">
-        <a class="btn-index btn-index--full" id="checkout-btn" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
+        <form action="Checkout" method="post">
+
+
+            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="checkout">
+        </form>
+
+
+    <div class="checkout-btn" id="leftHeader">
+        <a class="shoppingCartText btn-index btn-index--full" id="checkout-btn" href="${pageContext.request.contextPath}/checkout.jsp">Checkout</a>
     </div>
 </div>
 

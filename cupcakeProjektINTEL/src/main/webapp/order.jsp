@@ -29,10 +29,12 @@
                 <label for="topping">choose a topping:</label>
                 <select class="btn-index" id="topping" name="topping">
 
+
                     <option value="0">Choose topping</option>
                     <c:forEach var="toppings" items="${sessionScope.dropdownListTopping}">
                         <option value="${toppings.toppingId}"> ${toppings.name} ${toppings.price}kr.</option>
                     </c:forEach>
+
 
                 </select></div>
 

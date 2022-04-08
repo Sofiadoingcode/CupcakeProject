@@ -16,11 +16,11 @@
     <jsp:body>
         <form action="login" method="post">
             <%--<label for="username">Username: </label>--%>
-            <input type="text" class="InputFields" id="username" name="username" placeholder="Username"/>
+            <input type="text" class="UsernameInputField" id="username" name="username" placeholder=" Username"/>
             <br>
 
             <%--<label for="password">Password: </label>--%>
-            <input type="password" class="InputFields" id="password" name="password" placeholder="Password"/>
+            <input type="password" class="PasswordInputField" id="password" name="password" placeholder=" Password"/>
             <br>
 
         <p>Don't have a user? <a href="createlogin.jsp">Create one! </a></p>

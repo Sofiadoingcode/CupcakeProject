@@ -36,10 +36,47 @@ th, td {
     color: #fff;
 }
 
-.InputFields{
+.UsernameInputField{
+    width: 20rem;
+    height: 3rem;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    margin-top: 8px;
+    border-color: #3c1460;
+}
+
+.PasswordInputField{
     width: 20rem;
     height: 3rem;
     border-radius: 10px;
     margin-bottom: 7px;
     border-color: #3c1460;
 }
+
+.EmailInputField{
+    width: 20rem;
+    height: 3rem;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    border-color: #3c1460;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    text-indent: 5px;
+}
+
+.row{
+    width: 50rem;
+}
+
+.AboutUsPictures{
+    height: 150px;
+    width: 150px;
+}
+
+.card{
+    width: 200px;
+}
+
+.sectionCust

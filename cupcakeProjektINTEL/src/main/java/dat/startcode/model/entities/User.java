@@ -4,13 +4,14 @@ import java.util.Objects;
 
 public class User
 {
+    private int userId;
     private String username;
     private String password;
     private String role;
     private String email;
     private int balance;
 
-    public User(String username, String password, String role)
+    public User(String username, String password, String role) //Bruges ikke, kan slettes
     {
 
         this.username = username;
@@ -18,12 +19,20 @@ public class User
         this.role = role;
     }
 
-    public User(String username, String password, String role, String email, int balance)
+    public User(String username, String password, String role, String email, int balance, int userId)
     {
+        this.userId = userId;
         this.email = email;
         this.username = username;
         this.password = password;
         this.role = role;
+        this.balance = balance;
+    }
+
+    public User(int userId, String username, String email, int balance) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
         this.balance = balance;
     }
 
@@ -75,6 +84,22 @@ public class User
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Override

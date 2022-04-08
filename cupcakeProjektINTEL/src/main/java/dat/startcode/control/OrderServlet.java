@@ -31,10 +31,6 @@ public class OrderServlet extends HttpServlet {
 
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-
-
-
-
         List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
         //basket.add(new OrderLine(request.getParameter("topping"),request.getParameter("bottom"), toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity") )));
@@ -52,27 +48,30 @@ public class OrderServlet extends HttpServlet {
         response.setContentType("text/html");
         HttpSession session = request.getSession();
         List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
-
-
+        int idBottom = Integer.parseInt(request.getParameter("bottom"));
+        int idTopping = Integer.parseInt(request.getParameter("topping"));
         OrderLineDTO orderLineDTO;
         try {
-            orderLineDTO = cupcakeMapper.getOrderLine(Integer.parseInt(request.getParameter("topping")),Integer.parseInt(request.getParameter("bottom")));
+            orderLineDTO = cupcakeMapper.getOrderLine(idTopping,idBottom);
             String toppingName=orderLineDTO.getToppingName();
             String bottomName=orderLineDTO.getBottomName();
             int toppingPrice=orderLineDTO.getToppingPrice();
             int bottomPrice=orderLineDTO.getBottomPrice();
             orderLinePrice=(toppingPrice+bottomPrice)*Integer.parseInt(request.getParameter("quantity"));
-            basket.add(new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity")), orderLinePrice) );
+            basket.add(new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity")),idBottom, idTopping, orderLinePrice) );
             orderPrice=0;
             for(int i=0; i<basket.size(); i++){
                orderPrice+=basket.get(i).getOrderLinePrice();
             }
-            session.setAttribute("basket",basket);
             session.setAttribute("orderPrice",orderPrice);
+            session.setAttribute("basket",basket);
             request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
         } catch (DatabaseException e) {
             e.printStackTrace();
         }
+
+        session.setAttribute("basket",basket);
+        request.getRequestDispatcher("order.jsp").forward(request, response);
 
     }
 }

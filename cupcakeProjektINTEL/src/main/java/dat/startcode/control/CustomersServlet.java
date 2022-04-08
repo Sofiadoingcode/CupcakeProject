@@ -2,9 +2,11 @@ package dat.startcode.control;
 
 import dat.startcode.model.DTOs.OrderListDTO;
 import dat.startcode.model.config.ApplicationStart;
+import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
 import dat.startcode.model.persistence.OrderMapper;
+import dat.startcode.model.persistence.UserMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,16 +18,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet(name = "orderlist", urlPatterns = {"/orderlist"})
-public class orderlist extends HttpServlet {
+@WebServlet(name = "customersservlet", urlPatterns = {"/customersservlet"})
+public class CustomersServlet extends HttpServlet {
 
-    private OrderMapper orderMapper;
+    private UserMapper userMapper;
     ConnectionPool connectionPool;
     @Override
     public void init() throws ServletException
     {
         connectionPool = ApplicationStart.getConnectionPool();
-        orderMapper = new OrderMapper(connectionPool);
+        userMapper = new UserMapper(connectionPool);
     }
 
     @Override
@@ -35,19 +37,17 @@ public class orderlist extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
+
         try
         {
+            System.out.println("TRYING");
+            List<User> allCustomers = userMapper.getAllCustomers();
 
-            List<OrderListDTO> orderListDTOList = orderMapper.getAllNoneCompletedOrders();
-            List<OrderListDTO> completedOrders = orderMapper.getAllCompletedOrders();
-
-            request.setAttribute("orders", orderListDTOList);
-            request.setAttribute("completedorders", completedOrders);
-            request.getRequestDispatcher("orderlist.jsp").forward(request, response);
+            request.setAttribute("customerlist", allCustomers);
+            request.getRequestDispatcher("customers.jsp").forward(request, response);
         }
         catch (DatabaseException e)
         {
-
             Logger.getLogger("web").log(Level.SEVERE, e.getMessage());
             request.setAttribute("fejlbesked", e.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);
@@ -58,19 +58,8 @@ public class orderlist extends HttpServlet {
 
     }
 
-
-
-//    @Override
-//    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.doDelete(req, resp);
-//
-//
-//    }
-
-    public void destroy()
-    {
+    @Override
+    public void destroy() {
 
     }
-
-
 }
