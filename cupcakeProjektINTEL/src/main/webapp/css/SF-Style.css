@@ -167,6 +167,35 @@ html{
 }
 
 
+.seeOrder-btn {
+    border: none;
+    color: white;
+    padding: 7px 8px;
+    /*text-align: center;*/
+    text-decoration: none;
+    /*display: inline-block;*/
+    border-radius: 7px;
+    font-size: 1.5rem;
+    /*background-color: #634380;*/
+    transition: all 0.3s;
+}
+
+.seeOrder-back {
+    background-color: #775b90;
+    width: 10rem;
+    height: 5rem;
+}
+
+.seeOrder-back:hover, .seeOrder-back:active {
+    background-color: #502c70;
+}
+
+.gobackButton {
+    margin: 5rem;
+
+}
+
+
 
 .orderlist-collapsible {
     background-color: #c5b9cf;
@@ -212,4 +241,7 @@ html{
     margin-top: 50px;
 
 }
+
+
+
 

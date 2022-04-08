@@ -31,7 +31,7 @@ public class DeleteUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserMapper userMapper = new UserMapper(connectionPool);
-        ;
+
         String idString = req.getParameter("delete");
         int userId = Integer.parseInt(idString);
         try {

@@ -43,9 +43,9 @@
                                         <td>${order.userUsername}</td>
                                         <td>${order.userEmail}</td>
                                         <td>
-                                            <button type="button" class="btn-seeorder" data-toggle="modal" data-target="#orderModal">
-                                                See Order
-                                            </button>
+                                            <form>
+                                                <button type="submit" name="seeOrder" value="${order.orderId}" formaction="seeOrderlineServlet" class="seeorder-btn">See Order</button>
+                                            </form>
                                         </td>
                                         <td>${order.totalPrice}</td>
                                         <td>
@@ -63,7 +63,10 @@
                                                 </button>
                                             </form>
 
+
+
                                         </td>
+
 
                                 </tr>
                             </c:forEach>
@@ -96,9 +99,9 @@
                                 <td>${completedorder.userUsername}</td>
                                 <td>${completedorder.userEmail}</td>
                                 <td>
-                                    <button type="button" class="btn-seeorder" data-toggle="modal" data-target="#orderModal">
-                                        See Order
-                                    </button>
+                                    <form>
+                                        <button type="submit" name="seeOrder" value="${completedorder.orderId}" formaction="seeOrder.jsp" class="seeorder-btn">See Order</button>
+                                    </form>
                                 </td>
                                 <td>${completedorder.totalPrice}</td>
                                 <td>
@@ -141,6 +144,10 @@
                         });
                     }
                 </script>
+
+                <!-- The Modal -->
+
+
 
 
             </section>

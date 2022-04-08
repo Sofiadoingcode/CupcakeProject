@@ -1,9 +1,9 @@
 package dat.startcode.model.persistence;
 
+import dat.startcode.model.DTOs.OrderLineDTOSOFIA;
 import dat.startcode.model.DTOs.OrderListDTO;
 import dat.startcode.model.exceptions.DatabaseException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IOrderMapper {
@@ -13,5 +13,6 @@ public interface IOrderMapper {
     public List<OrderListDTO> getAllCompletedOrders() throws DatabaseException;
     public boolean deleteOrder(int orderId) throws DatabaseException;
     public boolean updateOrder(int orderId) throws DatabaseException;
+    public List<OrderLineDTOSOFIA> getSingleOrderOrderlines(int orderId) throws DatabaseException;
 
 }
