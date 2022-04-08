@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class OrderMapper implements IOrderMapper{
+public class OrderMapper implements IOrderMapper {
 
     private ConnectionPool connectionPool;
 
@@ -29,13 +29,10 @@ public class OrderMapper implements IOrderMapper{
 
         String sql = "SELECT idOrder, totalPrice, ordertime, u.idUser, u.username, u.email FROM `order` INNER JOIN user u USING(idUser)";
 
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
-                while (rs.next())
-                {
+                while (rs.next()) {
                     int orderId = rs.getInt("idOrder");
                     int totalPrice = rs.getInt("totalPrice");
                     int userId = rs.getInt("idUser");
@@ -44,7 +41,7 @@ public class OrderMapper implements IOrderMapper{
                     OrderListDTO dto;
                     try {
                         String time = rs.getString("ordertime");
-                        dto = new OrderListDTO(orderId, totalPrice, userId, username, email,time);
+                        dto = new OrderListDTO(orderId, totalPrice, userId, username, email, time);
                     } catch (SQLException e) {
                         e.printStackTrace();
                         dto = new OrderListDTO(orderId, totalPrice, userId, username, email);
@@ -54,9 +51,7 @@ public class OrderMapper implements IOrderMapper{
                 }
 
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new DatabaseException(ex, "Fejl under indlæsning af bøger og forfattere fra databasen");
         }
         return orderListDTOList;
@@ -67,16 +62,12 @@ public class OrderMapper implements IOrderMapper{
         Logger.getLogger("web").log(Level.INFO, "");
 
         List<OrderListDTO> orderListDTOList = new ArrayList<>();
-
         String sql = "SELECT idOrder, totalPrice,ordertime, u.idUser, u.username, u.email FROM `order` INNER JOIN user u USING(idUser) where isCompleted='0'";
 
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
-                while (rs.next())
-                {
+                while (rs.next()) {
                     int orderId = rs.getInt("idOrder");
                     int totalPrice = rs.getInt("totalPrice");
 
@@ -86,7 +77,7 @@ public class OrderMapper implements IOrderMapper{
                     OrderListDTO dto;
                     try {
                         String time = rs.getString("ordertime");
-                        dto = new OrderListDTO(orderId, totalPrice, userId, username, email,time);
+                        dto = new OrderListDTO(orderId, totalPrice, userId, username, email, time);
                     } catch (SQLException e) {
                         e.printStackTrace();
                         dto = new OrderListDTO(orderId, totalPrice, userId, username, email);
@@ -95,9 +86,7 @@ public class OrderMapper implements IOrderMapper{
                     System.out.println(dto);
                 }
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
         }
         return orderListDTOList;
@@ -112,13 +101,10 @@ public class OrderMapper implements IOrderMapper{
 
         String sql = "SELECT idOrder, totalPrice, u.idUser, u.username, u.email FROM `order` INNER JOIN user u USING(idUser) where isCompleted='1'";
 
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
-                while (rs.next())
-                {
+                while (rs.next()) {
                     int orderId = rs.getInt("idOrder");
                     int totalPrice = rs.getInt("totalPrice");
 
@@ -129,9 +115,7 @@ public class OrderMapper implements IOrderMapper{
                     orderListDTOList.add(dto);
                 }
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
         }
         return orderListDTOList;
@@ -142,27 +126,35 @@ public class OrderMapper implements IOrderMapper{
     public boolean deleteOrder(int orderId) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
         boolean isDeleted = false;
-        String sql = "delete from `order` where idOrder = ?";
 
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
-                ps.setInt(1,orderId);
+
+        try (Connection connection = connectionPool.getConnection()) {
+
+            String sql1 = "delete from orderline where idOrder= ?";
+            try (PreparedStatement ps = connection.prepareStatement(sql1)) {
+                ps.setInt(1, orderId);
+                ps.executeUpdate();
+            } catch (Exception E) {
+                System.out.println(E);
+            }
+
+            String sql = "delete from `order` where idOrder = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, orderId);
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1) {
                     isDeleted = true;
                 } else {
-                    throw new DatabaseException("Elementet blev ikke fjernet");
+                    throw new DatabaseException("Elementet blev ikke fjernet 1");
                 }
             } catch (SQLException e) {
-                throw new DatabaseException("Elementet blev ikke fjernet");
+                throw new DatabaseException("Elementet blev ikke fjernet 2");
             }
         } catch (SQLException e) {
-            throw new DatabaseException("Elementet blev ikke fjernet");
+            throw new DatabaseException("Elementet blev ikke fjernet3 ");
         }
         return isDeleted;
-
     }
 
     @Override
@@ -173,17 +165,15 @@ public class OrderMapper implements IOrderMapper{
         String sql = "";
         int setValue = getIsCompleteValue(orderId);
 
-        if(setValue == 0) {
+        if (setValue == 0) {
             sql = "UPDATE `order` SET isCompleted = '1' WHERE idOrder = ?";
         } else {
             sql = "UPDATE `order` SET isCompleted = '0' WHERE idOrder = ?";
         }
 
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
-                ps.setInt(1,orderId);
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, orderId);
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1) {
                     isCompleted = true;
@@ -203,14 +193,12 @@ public class OrderMapper implements IOrderMapper{
         int value;
 
         String sql = "SELECT `isCompleted` from `order` where idOrder=?";
-        try (Connection connection = connectionPool.getConnection())
-        {
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
-                ps.setInt(1,orderId);
+        try (Connection connection = connectionPool.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, orderId);
                 ResultSet rs = ps.executeQuery();
                 int isCompleted = 0;
-                while(rs.next()) {
+                while (rs.next()) {
                     isCompleted = rs.getInt("isCompleted");
                 }
                 value = isCompleted;
@@ -234,13 +222,13 @@ public class OrderMapper implements IOrderMapper{
 
         try (Connection connection = connectionPool.getConnection()) {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            LocalDateTime now=LocalDateTime.now();
+            LocalDateTime now = LocalDateTime.now();
 
             String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted, ordertime,totalPrice) VALUES (?, 0,?,?) ";
             try (PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps1.setInt(1, user.getUserId());
-                ps1.setString(2,dtf.format(now));
-                ps1.setInt(3,totalPrice);
+                ps1.setString(2, dtf.format(now));
+                ps1.setInt(3, totalPrice);
                 int rowsAffected = ps1.executeUpdate();
 
 
@@ -262,7 +250,7 @@ public class OrderMapper implements IOrderMapper{
                     ps2.setInt(2, item.getBottomId());
                     ps2.setInt(3, item.getQuantity());
                     ps2.setInt(4, idKey);
-                    ps2.setInt(5,item.getOrderLinePrice()/item.getQuantity());
+                    ps2.setInt(5, item.getOrderLinePrice() / item.getQuantity());
                     ps2.executeUpdate();
                 }
             } catch (Exception E) {
