@@ -53,7 +53,7 @@ th, td {
     display: flex;
     flex-direction: column;
 }
-#checkout-btn{
+.checkout-btn{
     background-color: #28a428;
 }
 
@@ -83,30 +83,7 @@ th, td {
     max-height: 12px;
     margin-bottom: 2px;
 }
-@media (max-width: 800px) {
-    .shoppingCart {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-    }
-    .cupcakeOrder {
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .image img {
-        width: 50%;
-    }
-    .image,
-    .amount,
-    .topping,
-    .bottom{
-        width: 100%;
-        text-align: center;
-        margin: 6px 0;
-    }
 
-}
 .total-price{
     background-color: #634380;
 
