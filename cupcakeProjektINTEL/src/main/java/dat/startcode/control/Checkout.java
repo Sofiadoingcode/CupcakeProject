@@ -47,7 +47,7 @@ public class Checkout extends HttpServlet {
 
         OrderMapper orderMapper = new OrderMapper(connectionPool);
         try {
-            orderMapper.insertOrder(user,basket);
+            orderMapper.insertOrder(user,basket,(int)session.getAttribute("orderPrice"));
         } catch (DatabaseException e) {
             e.printStackTrace();
             System.out.println("if this doesnt work I am going to yeet you out of the window");

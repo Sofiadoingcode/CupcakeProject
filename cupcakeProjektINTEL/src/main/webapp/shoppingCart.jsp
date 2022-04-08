@@ -81,7 +81,7 @@
         <form action="Checkout" method="post">
 
 
-            <input  type="submit" class="btn--createandlogin btn--createandlogin--full" value="checkout">
+            <input  type="submit" class="shoppingCartText btn-index btn-index--full" value="checkout">
         </form>
 
 

@@ -226,7 +226,7 @@ public class OrderMapper implements IOrderMapper{
     }
 
 
-    public void insertOrder(User user, List<OrderLine> basket) throws DatabaseException {
+    public void insertOrder(User user, List<OrderLine> basket, int totalPrice) throws DatabaseException {
 
         int idKey = 0;
         Logger.getLogger("web").log(Level.INFO, "");
@@ -236,10 +236,11 @@ public class OrderMapper implements IOrderMapper{
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             LocalDateTime now=LocalDateTime.now();
 
-            String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted, ordertime) VALUES (?, 0,?) ";
+            String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted, ordertime,totalPrice) VALUES (?, 0,?,?) ";
             try (PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps1.setInt(1, user.getUserId());
                 ps1.setString(2,dtf.format(now));
+                ps1.setInt(3,totalPrice);
                 int rowsAffected = ps1.executeUpdate();
 
 
@@ -253,7 +254,7 @@ public class OrderMapper implements IOrderMapper{
                 System.out.println(e);
             }
             try {
-                String sql2 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (?, ?,?, ?)";
+                String sql2 = "insert into orderline(idTopping, idBottom, quantity, idOrder, unitPrice) values (?, ?,?, ?,?)";
                 for (OrderLine item : basket) {
 
                     PreparedStatement ps2 = connection.prepareStatement(sql2);
@@ -261,6 +262,7 @@ public class OrderMapper implements IOrderMapper{
                     ps2.setInt(2, item.getBottomId());
                     ps2.setInt(3, item.getQuantity());
                     ps2.setInt(4, idKey);
+                    ps2.setInt(5,item.getOrderLinePrice()/item.getQuantity());
                     ps2.executeUpdate();
                 }
             } catch (Exception E) {
