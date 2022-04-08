@@ -69,7 +69,7 @@ public class OrderServlet extends HttpServlet {
             }
             session.setAttribute("orderPrice",orderPrice);
             session.setAttribute("basket",basket);
-            request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
+            request.getRequestDispatcher("dropdown").forward(request, response);
         } catch (DatabaseException e) {
             e.printStackTrace();
         }
