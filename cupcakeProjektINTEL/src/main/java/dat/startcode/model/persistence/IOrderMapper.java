@@ -12,5 +12,6 @@ public interface IOrderMapper {
     public List<OrderListDTO> getAllNoneCompletedOrders() throws DatabaseException;
     public List<OrderListDTO> getAllCompletedOrders() throws DatabaseException;
     public boolean deleteOrder(int orderId) throws DatabaseException;
+    public boolean updateOrder(int orderId) throws DatabaseException;
 
 }

@@ -37,15 +37,17 @@ public class orderlist extends HttpServlet {
     {
         try
         {
-            System.out.println("TRYING");
+
             List<OrderListDTO> orderListDTOList = orderMapper.getAllNoneCompletedOrders();
+            List<OrderListDTO> completedOrders = orderMapper.getAllCompletedOrders();
 
             request.setAttribute("orders", orderListDTOList);
+            request.setAttribute("completedorders", completedOrders);
             request.getRequestDispatcher("orderlist.jsp").forward(request, response);
         }
         catch (DatabaseException e)
         {
-            System.out.println("HER ER JEG");
+
             Logger.getLogger("web").log(Level.SEVERE, e.getMessage());
             request.setAttribute("fejlbesked", e.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);
