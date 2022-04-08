@@ -133,48 +133,48 @@ width: 95px;
     color: #43484D;
     font-weight: 300;
 }
-button[class*=btn] {
-    width: 25px;
-    height: 25px;
-    background-color: #E1E8EE;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
+/*button[class*=btn] {*/
+/*    width: 25px;*/
+/*    height: 25px;*/
+/*   background-color: #E1E8EE;*!*/
+/*    border-radius: 6px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.btn-minus img {
-    max-width: 10px;
-    max-height: 10px;
-    margin-bottom: 2px;
-}
-.btn-add img {
-    max-width: 12px;
-    max-height: 12px;
-    margin-bottom: 2px;
-}
-@media (max-width: 800px) {
-    .shoppingCart {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-    }
-    .cupcakeOrder {
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .image img {
-        width: 50%;
-    }
-    .image,
-    .amount,
-    .topping,
-    .bottom{
-        width: 100%;
-        text-align: center;
-        margin: 6px 0;
-    }
-    .buttons {
-        margin-right: 20px;
-    }
-}
+/*.btn-minus img {*/
+/*    max-width: 10px;*/
+/*    max-height: 10px;*/
+/*    margin-bottom: 2px;*/
+/*}*/
+/*.btn-add img {*/
+/*    max-width: 12px;*/
+/*    max-height: 12px;*/
+/*    margin-bottom: 2px;*/
+/*}*/
+/*@media (max-width: 800px) {*/
+/*    .shoppingCart {*/
+/*        width: 100%;*/
+/*        height: auto;*/
+/*        overflow: hidden;*/
+/*    }*/
+/*    .cupcakeOrder {*/
+/*        height: auto;*/
+/*        flex-wrap: wrap;*/
+/*        justify-content: center;*/
+/*    }*/
+/*    .image img {*/
+/*        width: 50%;*/
+/*    }*/
+/*    .image,*/
+/*    .amount,*/
+/*    .topping,*/
+/*    .bottom{*/
+/*        width: 100%;*/
+/*        text-align: center;*/
+/*        margin: 6px 0;*/
+/*    }*/
+/*    .buttons {*/
+/*        margin-right: 20px;*/
+/*    }*/
+/*}*/

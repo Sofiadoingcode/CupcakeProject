@@ -1,6 +1,7 @@
 /* CSS stylesheet  for application */
 
 
+
 *{
     padding: 0;
     margin: 0;
@@ -149,12 +150,66 @@ html{
     background-color: red;
 }
 
+.orderlist-btn--uncomplete{
+    background-color: blue;
+}
+
 .orders-complete:hover, .orders-complete:active{
     background-color: #28a428;
 
 }
 .orders-delete:hover, .orders-delete:active{
     background-color: #cc0000;
+}
+
+.orderlist-btn--uncomplete:hover, .orderlist-btn--uncomplete:active{
+    background-color: darkblue;
+}
+
+
+
+.orderlist-collapsible {
+    background-color: #c5b9cf;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.orderlist-active, .orderlist-collapsible:hover {
+    background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.orderlist-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.orderlist-collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.orderlist-active:after {
+    content: "\2212";
+}
+
+
+.orderlist-collapsablesection{
+    max-width: 100%;
+    margin-top: 50px;
 
 }
 

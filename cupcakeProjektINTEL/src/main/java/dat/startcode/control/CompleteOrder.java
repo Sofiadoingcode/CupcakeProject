@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet(name = "deleteOrder", urlPatterns = {"/deleteOrder"})
-public class deleteOrder extends HttpServlet {
+@WebServlet(name = "completeorder", urlPatterns = {"/completeorder"})
+public class CompleteOrder extends HttpServlet {
 
     ConnectionPool connectionPool;
 
@@ -30,14 +30,13 @@ public class deleteOrder extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-
         OrderMapper orderMapper = new OrderMapper(connectionPool);;
-        String idDelete = req.getParameter("delete");
+        String idComplete = req.getParameter("complete");
 
-        int deleteId = Integer.parseInt(idDelete);
+        int id = Integer.parseInt(idComplete);
         try {
 
-            orderMapper.deleteOrder(deleteId);
+            orderMapper.updateOrder(id);
             req.getRequestDispatcher("orderlist").forward(req,resp);
 
         } catch (DatabaseException e) {

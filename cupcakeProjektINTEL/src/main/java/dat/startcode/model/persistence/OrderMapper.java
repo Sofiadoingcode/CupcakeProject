@@ -117,7 +117,7 @@ public class OrderMapper implements IOrderMapper{
         }
         catch (SQLException ex)
         {
-            throw new DatabaseException(ex, "Fejl under indlæsning af bøger og forfattere fra databasen");
+            throw new DatabaseException(ex, "Fejl under indlæsning fra databasen");
         }
         return orderListDTOList;
     }
@@ -150,6 +150,66 @@ public class OrderMapper implements IOrderMapper{
 
     }
 
+    @Override
+    public boolean updateOrder(int orderId) throws DatabaseException {
+        Logger.getLogger("web").log(Level.INFO, "");
+        boolean isCompleted = false;
+
+        String sql = "";
+        int setValue = getIsCompleteValue(orderId);
+
+        if(setValue == 0) {
+            sql = "UPDATE `order` SET isCompleted = '1' WHERE idOrder = ?";
+        } else {
+            sql = "UPDATE `order` SET isCompleted = '0' WHERE idOrder = ?";
+        }
+
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1,orderId);
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected == 1) {
+                    isCompleted = true;
+                } else {
+                    throw new DatabaseException("Elementet blev ikke fjernet");
+                }
+            } catch (SQLException e) {
+                throw new DatabaseException("Elementet blev ikke fjernet");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Elementet blev ikke fjernet");
+        }
+        return isCompleted;
+    }
+
+    private int getIsCompleteValue(int orderId) throws DatabaseException {
+        int value;
+
+        String sql = "SELECT `isCompleted` from `order` where idOrder=?";
+        try (Connection connection = connectionPool.getConnection())
+        {
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1,orderId);
+                ResultSet rs = ps.executeQuery();
+                int isCompleted = 0;
+                while(rs.next()) {
+                    isCompleted = rs.getInt("isCompleted");
+                }
+                value = isCompleted;
+
+            } catch (SQLException e) {
+                throw new DatabaseException("Elementet blev ikke fjernet");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Elementet blev ikke fjernet");
+        }
+
+        return value;
+    }
+
 
     public void insertOrder(User user, List<OrderLine> basket) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
@@ -176,3 +236,4 @@ public class OrderMapper implements IOrderMapper{
 
 
 }
+
