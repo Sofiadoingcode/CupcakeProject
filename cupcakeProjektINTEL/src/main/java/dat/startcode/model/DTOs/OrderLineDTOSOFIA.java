@@ -1,6 +1,6 @@
 package dat.startcode.model.DTOs;
 
-public class OrderLineDTO {
+public class OrderLineDTOSOFIA {
     private int orderlineId;
     private int unitPrice;
     private int quantity;
@@ -10,7 +10,7 @@ public class OrderLineDTO {
     private String bottomName;
     private int orderId;
 
-    public OrderLineDTO(int orderlineId, int unitPrice, int quantity, int toppingId, String toppingName, int bottomId, String bottomName, int orderId) {
+    public OrderLineDTOSOFIA(int orderlineId, int unitPrice, int quantity, int toppingId, String toppingName, int bottomId, String bottomName, int orderId) {
         this.orderlineId = orderlineId;
         this.unitPrice = unitPrice;
         this.quantity = quantity;

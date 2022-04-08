@@ -1,8 +1,7 @@
 package dat.startcode.model.persistence;
 
-import dat.startcode.model.DTOs.OrderLineDTO;
+import dat.startcode.model.DTOs.OrderLineDTOSOFIA;
 import dat.startcode.model.DTOs.OrderListDTO;
-import dat.startcode.model.entities.Order;
 import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
@@ -202,10 +201,10 @@ public class OrderMapper implements IOrderMapper{
     }
 
     @Override
-    public List<OrderLineDTO> getSingleOrderOrderlines(int orderId) throws DatabaseException {
+    public List<OrderLineDTOSOFIA> getSingleOrderOrderlines(int orderId) throws DatabaseException {
         Logger.getLogger("web").log(Level.INFO, "");
 
-        List<OrderLineDTO> orderLines = new ArrayList<>();
+        List<OrderLineDTOSOFIA> orderLines = new ArrayList<>();
 
         String sql = "SELECT idorderline, t.idtopping, t.name, b.idbottom, b.name, unitprice, quantity, idOrder FROM `orderline` INNER JOIN topping t USING(idtopping) INNER JOIN bottom b USING(idbottom) where idOrder = ?";
 
@@ -233,9 +232,9 @@ public class OrderMapper implements IOrderMapper{
 
 
 
-                    OrderLineDTO orderLineDTO;
-                    orderLineDTO = new OrderLineDTO(idorderline, unitprice, quantity, toppingId, toppingName, bottomId, bottomName, idOrder);
-                    orderLines.add(orderLineDTO);
+                    OrderLineDTOSOFIA orderLineDTOSOFIA;
+                    orderLineDTOSOFIA = new OrderLineDTOSOFIA(idorderline, unitprice, quantity, toppingId, toppingName, bottomId, bottomName, idOrder);
+                    orderLines.add(orderLineDTOSOFIA);
                 }
             }
         }

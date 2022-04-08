@@ -1,7 +1,6 @@
 package dat.startcode.control;
 
-import dat.startcode.model.DTOs.OrderLineDTO;
-import dat.startcode.model.DTOs.OrderListDTO;
+import dat.startcode.model.DTOs.OrderLineDTOSOFIA;
 import dat.startcode.model.config.ApplicationStart;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
@@ -43,9 +42,9 @@ import java.util.logging.Logger;
 
             try {
 
-                List<OrderLineDTO> orderLineDTOS = orderMapper.getSingleOrderOrderlines(orderId);
+                List<OrderLineDTOSOFIA> orderLineDTOSOFIAS = orderMapper.getSingleOrderOrderlines(orderId);
 
-                request.setAttribute("orderlines", orderLineDTOS);
+                request.setAttribute("orderlines", orderLineDTOSOFIAS);
 
                 System.out.println("bbb");
 
