@@ -38,9 +38,13 @@ public class OrderServlet extends HttpServlet {
         for (OrderLine item : basket) {
             System.out.println(item);
         }
+        if(basket.size()==0) {
+            orderPrice = 0;
+            session.setAttribute("orderPrice", orderPrice);
+        }
 
         session.setAttribute("basket",basket);
-        request.getRequestDispatcher("order.jsp").forward(request, response);
+        request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
     }
 
     @Override
