@@ -6,6 +6,8 @@ import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
 import dat.startcode.model.exceptions.DatabaseException;
 import dat.startcode.model.persistence.ConnectionPool;
+import dat.startcode.model.persistence.OrderMapper;
+import dat.startcode.model.persistence.UserMapper;
 import org.junit.jupiter.api.Assertions;
 
 import javax.servlet.*;
@@ -13,6 +15,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -38,62 +42,15 @@ public class Checkout extends HttpServlet {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("user");
-
-        
-        response.setContentType("text/html");
-        int idKey = 0;
-        Logger.getLogger("web").log(Level.INFO, "");
         List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
+        response.setContentType("text/html");
 
-
-        try (Connection connection = connectionPool.getConnection()) {
-
-            String sql = "INSERT INTO `cupcakedatabase`.`order` ( idUser, isCompleted) VALUES (?, 0) ";
-            try (PreparedStatement ps1 = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps1.setInt(1, user.getUserId());
-                int rowsAffected = ps1.executeUpdate();
-
-
-                //return the generated primary key from sql
-                ResultSet generatedKeys = ps1.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    idKey = generatedKeys.getInt(1);
-                }
-
-               // System.out.println("id key is there" + idKey);
-
-
-            } catch (SQLException e) {
-                System.out.println(e);
-
-            }
-
-            try {
-
-                String sql2 = "insert into orderline(idTopping, idBottom, quantity, idOrder) values (?, ?,?, ?)";
-                for (OrderLine item : basket) {
-
-                    PreparedStatement ps2 = connection.prepareStatement(sql2);
-
-
-                    ps2.setInt(1, item.getToppingId());
-                    ps2.setInt(2, item.getBottomID());
-                    ps2.setInt(3, item.getQuantity());
-                    ps2.setInt(4, idKey);
-                    ps2.executeUpdate();
-
-
-                }
-            } catch (Exception E) {
-
-                System.out.println(E);
-                System.out.println("dasohaofhasjoi FUCK ITS NOT WORKING AOH()y%`=(ij)?h#%");
-
-            }
-
-        } catch (SQLException ex) {
-            System.out.println(ex + "error connecting to db");
-            System.out.println("whydoes it not work");
+        OrderMapper orderMapper = new OrderMapper(connectionPool);
+        try {
+            orderMapper.insertOrder(user,basket);
+        } catch (DatabaseException e) {
+            e.printStackTrace();
+            System.out.println("if this doesnt work I am going to yeet you out of the window");
         }
 
         session.setAttribute("basket", new ArrayList<OrderLine>());

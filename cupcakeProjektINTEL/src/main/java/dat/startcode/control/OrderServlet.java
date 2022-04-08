@@ -25,11 +25,6 @@ ConnectionPool connectionPool;
 
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-
-
-
-
-
         List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
         basket.add(new OrderLine(request.getParameter("topping"),request.getParameter("bottom"),Integer.parseInt(request.getParameter("quantity") )));
