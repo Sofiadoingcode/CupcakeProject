@@ -5,66 +5,61 @@
 <%@page errorPage="error.jsp" isErrorPage="false" %>
 
 <t:pagetemplate>
-    <jsp:attribute name="header">
-             Create Log In
-    </jsp:attribute>
 
     <jsp:attribute name="footer">
-            Login Page
+            About us
     </jsp:attribute>
 
     <jsp:body>
-        <section>
+        <section class="aboutUs-section">
 
-
-        </section>
-
-    <section>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="">
-                    <img src="images/AboutUs/CupcakeProject-Baker.png" class="card-img-top" alt="...">
-                    </div>
+            <div class="centerText">
+                <h2 class="centerText">Olsker Cupcakes</h2>
+                <div class="centerText" class="descriptionText">
+                    <p> Text and more text Text and more text Text and more text Text and more textText and more
+                        textText and more textText and more text<br>Text and more textText and more textText and
+                        more
+                        textText and more textText and more text</p>
+                </div>
+            </div>
+            <section>
+                <div class="positionCards">
+                    <div class="card" class="middleCardSize">
+                        <img src="images/AboutUs/CupcakeProject-Baker.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Our Beloved Baker</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is not only our wonderful baker, but it is also his grandfather
+                                who is
+                                the
+                                founder of the shop. This is the founder of Olsker Cupcakes. <br>He fought through tough
+                                terrain
+                                and wild animals to bring home the very recipe that makes our cupcakes, even to this
+                                day!
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="card" class="middleCardSize">
+                        <img src="images/AboutUs/CashRegi.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="AboutUsPictures">
-                    <img src="images/AboutUs/CashRegi.png" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Shop Employee</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="AboutUsPictures">
+                    <div class="card" class="middleCardSize">
                         <img src="images/AboutUs/CupcakeProject-Assistant.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Founder Of Olsker Cupcakes</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
+            </section>
+        </section>
     </jsp:body>
 </t:pagetemplate>
