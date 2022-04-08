@@ -54,7 +54,7 @@ th, td {
     flex-direction: column;
 }
 .checkout-btn{
-    background-color: #28a428;
+    margin-left: 22%;
 }
 
 .btn-remove{
@@ -101,4 +101,15 @@ th, td {
     transition: all 0.3s;
     color:#ffffff;
 }
-
+.shoppingCartText{
+    padding: 1.6rem 3.2rem;
+    border-radius: 30px;
+    height: 60px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    background-color: #28a428;
+    color: #FFFFFF;
+}
