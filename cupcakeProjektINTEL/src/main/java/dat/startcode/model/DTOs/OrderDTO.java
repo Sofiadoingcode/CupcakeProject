@@ -17,7 +17,10 @@ public class OrderDTO {
         for (int i = 0; i < basket.size(); i++) {
             OrderLine item = basket.get(i);
             if (orderLine.getBottomId() == item.getBottomId() && orderLine.getToppingId() == item.getToppingId()) {
+
+
                 item.setQuantity(item.getQuantity() + orderLine.getQuantity());
+
                 return basket;
             }
 

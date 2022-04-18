@@ -149,7 +149,7 @@ public int getToppingId(){
     }
 
     public int getOrderLinePrice() {
-        return orderLinePrice;
+        return (toppingPrice + bottomPrice)*quantity;
     }
 
     public void setOrderLinePrice(int orderLinePrice) {
