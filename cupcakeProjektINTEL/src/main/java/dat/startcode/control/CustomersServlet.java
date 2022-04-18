@@ -40,7 +40,7 @@ public class CustomersServlet extends HttpServlet {
 
         try
         {
-            System.out.println("TRYING");
+
             List<User> allCustomers = userMapper.getAllCustomers();
 
             request.setAttribute("customerlist", allCustomers);
