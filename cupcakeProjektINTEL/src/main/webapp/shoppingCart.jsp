@@ -36,7 +36,7 @@
 
 
         </thead>
-        <c:forEach var="orders" items="${sessionScope.basket}">
+        <c:forEach var="orders" items="${sessionScope.basket.basket}">
             <tr class="orders-tr">
 
                 <td>${orders.toppingName}</td>
@@ -74,7 +74,7 @@
     </div>
 <section class="checkout-total-price">
     <div class="total-price">
-        <p id="total-price-text">Total: ${sessionScope.orderPrice} kr.</p>
+        <p id="total-price-text">Total: ${sessionScope.basket.totalPrice()} kr.</p>
     </div>
     <div class="checkout-btn-div">
 

@@ -23,6 +23,9 @@ public class DropdownServlet extends HttpServlet {
     public void init() throws ServletException {
         this.connectionPool = ApplicationStart.getConnectionPool();
         cupcakeMapper=new CupcakeMapper(connectionPool);
+
+
+
     }
 
     @Override

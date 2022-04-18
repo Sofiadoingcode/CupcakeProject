@@ -1,5 +1,6 @@
 package dat.startcode.control;
 
+import dat.startcode.model.DTOs.OrderDTO;
 import dat.startcode.model.config.ApplicationStart;
 import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
@@ -52,7 +53,7 @@ public class Login extends HttpServlet
             user = userMapper.login(username, password);
             session = request.getSession();
             session.setAttribute("user", user); // adding user object to session scope
-            List<OrderLine> basket = new ArrayList<>();
+            OrderDTO basket = new OrderDTO();
             session.setAttribute("basket",basket);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

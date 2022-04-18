@@ -9,7 +9,8 @@ public class OrderLineDTO {
     private int price;
     private int toppingId;
     private int bottomId;
-
+    private int orderlineId;
+    private int quantity;
 
     public OrderLineDTO(String toppingName, String bottomName, int toppingPrice, int bottomPrice) {
         this.toppingName = toppingName;
@@ -23,7 +24,17 @@ public class OrderLineDTO {
         this.toppingId=id;
         this.bottomId=id;
     }
-
+    /*
+    public OrderLineDTOSOFIA(int orderlineId, int unitPrice, int quantity, int toppingId, String toppingName, int bottomId, String bottomName, int orderId) {
+        this.orderlineId = orderlineId;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.toppingId = toppingId;
+        this.toppingName = toppingName;
+        this.bottomId = bottomId;
+        this.bottomName = bottomName;
+        this.orderId = orderId;
+    }*/
     @Override
     public String toString() {
         return "OrderLineDTO{" +

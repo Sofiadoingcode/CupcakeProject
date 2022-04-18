@@ -19,7 +19,7 @@
             <div class="custom-select" style="width: 200px">
                 <label for="bottom">Choose a topping:</label>
                 <select id="bottom" name=bottom>
-                    <option value="0">Choose bottom</option>
+                    <option value="${sessionScope.dropdownListBottom.get(0).bottomId}">${sessionScope.dropdownListBottom.get(0).name} ${sessionScope.dropdownListBottom.get(0).price}kr</option>
                     <c:forEach var="bottoms" items="${sessionScope.dropdownListBottom}">
                     <option value="${bottoms.bottomId}">${bottoms.name} ${bottoms.price}kr.</option>
                     </c:forEach>
@@ -30,7 +30,7 @@
                 <select class="btn-index" id="topping" name="topping">
 
 
-                    <option value="0">Choose topping</option>
+                    <option value="${sessionScope.dropdownListTopping.get(0).toppingId}">${sessionScope.dropdownListTopping.get(0).name} ${sessionScope.dropdownListTopping.get(0).price}kr</option>
                     <c:forEach var="toppings" items="${sessionScope.dropdownListTopping}">
                         <option value="${toppings.toppingId}"> ${toppings.name} ${toppings.price}kr.</option>
                     </c:forEach>

@@ -1,5 +1,6 @@
 package dat.startcode.control;
 
+import dat.startcode.model.DTOs.OrderDTO;
 import dat.startcode.model.DTOs.OrderLineDTO;
 import dat.startcode.model.config.ApplicationStart;
 import dat.startcode.model.entities.OrderLine;
@@ -17,13 +18,13 @@ import java.util.List;
 public class OrderServlet extends HttpServlet {
     ConnectionPool connectionPool;
     private CupcakeMapper cupcakeMapper;
-    int orderLinePrice=0;
-    int orderPrice=0;
+    int orderLinePrice = 0;
+    int orderPrice = 0;
 
     @Override
     public void init() throws ServletException {
         this.connectionPool = ApplicationStart.getConnectionPool();
-        cupcakeMapper=new CupcakeMapper(connectionPool);
+        cupcakeMapper = new CupcakeMapper(connectionPool);
     }
 
     @Override
@@ -31,19 +32,9 @@ public class OrderServlet extends HttpServlet {
 
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-        List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
 
         //basket.add(new OrderLine(request.getParameter("topping"),request.getParameter("bottom"), toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity") )));
-
-        for (OrderLine item : basket) {
-            System.out.println(item);
-        }
-        if(basket.size()==0) {
-            orderPrice = 0;
-            session.setAttribute("orderPrice", orderPrice);
-        }
-
-        session.setAttribute("basket",basket);
+        //session.setAttribute("basket",basket);
         request.getRequestDispatcher("shoppingCart.jsp").forward(request, response);
     }
 
@@ -51,31 +42,40 @@ public class OrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-        List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
+        OrderDTO basket = (OrderDTO) session.getAttribute("basket");
+
         int idBottom = Integer.parseInt(request.getParameter("bottom"));
         int idTopping = Integer.parseInt(request.getParameter("topping"));
-        OrderLineDTO orderLineDTO;
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+        OrderLine orderLine = null;
         try {
-            orderLineDTO = cupcakeMapper.getOrderLine(idTopping,idBottom);
-            String toppingName=orderLineDTO.getToppingName();
-            String bottomName=orderLineDTO.getBottomName();
-            int toppingPrice=orderLineDTO.getToppingPrice();
-            int bottomPrice=orderLineDTO.getBottomPrice();
-            orderLinePrice=(toppingPrice+bottomPrice)*Integer.parseInt(request.getParameter("quantity"));
-            basket.add(new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, Integer.parseInt(request.getParameter("quantity")),idBottom, idTopping, orderLinePrice) );
-            orderPrice=0;
-            for(int i=0; i<basket.size(); i++){
-               orderPrice+=basket.get(i).getOrderLinePrice();
-            }
-            session.setAttribute("orderPrice",orderPrice);
-            session.setAttribute("basket",basket);
-            request.getRequestDispatcher("dropdown").forward(request, response);
+            orderLine = getOrderline(quantity, idBottom, idTopping);
+            basket.addToBasket(orderLine);
         } catch (DatabaseException e) {
             e.printStackTrace();
         }
 
-        session.setAttribute("basket",basket);
+
+        session.setAttribute("basket", basket);
+        request.getRequestDispatcher("dropdown").forward(request, response);
+
+
         request.getRequestDispatcher("order.jsp").forward(request, response);
 
+    }
+
+    private OrderLine getOrderline(int quantity, int idBottom, int idTopping) throws DatabaseException {
+        OrderLineDTO orderLineDTO;
+        OrderLine orderLine = null;
+        orderLineDTO = cupcakeMapper.getOrderLine(idTopping, idBottom);
+        String toppingName = orderLineDTO.getToppingName();
+        String bottomName = orderLineDTO.getBottomName();
+        int toppingPrice = orderLineDTO.getToppingPrice();
+        int bottomPrice = orderLineDTO.getBottomPrice();
+        orderLinePrice = (toppingPrice + bottomPrice) * quantity;
+        orderLine = new OrderLine(toppingName, bottomName, toppingPrice, bottomPrice, quantity, idBottom, idTopping, orderLinePrice);
+
+        return orderLine;
     }
 }

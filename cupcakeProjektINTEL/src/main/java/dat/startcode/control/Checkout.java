@@ -1,6 +1,7 @@
 package dat.startcode.control;
 
 import com.mysql.cj.Session;
+import dat.startcode.model.DTOs.OrderDTO;
 import dat.startcode.model.config.ApplicationStart;
 import dat.startcode.model.entities.OrderLine;
 import dat.startcode.model.entities.User;
@@ -42,18 +43,18 @@ public class Checkout extends HttpServlet {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("user");
-        List<OrderLine> basket = (List<OrderLine>) session.getAttribute("basket");
+        OrderDTO basket = ((OrderDTO) session.getAttribute("basket"));
         response.setContentType("text/html");
 
         OrderMapper orderMapper = new OrderMapper(connectionPool);
         try {
-            orderMapper.insertOrder(user,basket,(int)session.getAttribute("orderPrice"));
+            orderMapper.insertOrder(user,basket.getBasket(),basket.totalPrice());
         } catch (DatabaseException e) {
             e.printStackTrace();
             System.out.println("if this doesnt work I am going to yeet you out of the window");
         }
 
-        session.setAttribute("basket", new ArrayList<OrderLine>());
+        session.setAttribute("basket", new OrderDTO());
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
 
     }
