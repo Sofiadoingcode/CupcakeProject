@@ -24,8 +24,6 @@ public class DropdownServlet extends HttpServlet {
         this.connectionPool = ApplicationStart.getConnectionPool();
         cupcakeMapper=new CupcakeMapper(connectionPool);
 
-
-
     }
 
     @Override
