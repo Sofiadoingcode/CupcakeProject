@@ -1,0 +1,86 @@
+@startuml
+left to right direction
+
+object CupcakeMapper
+object OrderMapper
+object UserMapper
+object ConnectionPool
+
+object Order
+object OrderLine
+object User
+
+object OrderDTO
+object OrderLineDTO
+object OrderLineSOFIA
+object OrderListDTO
+
+object AccountCreation
+object changePassword
+object Checkout
+object CompleteOrder
+object CustomersServlet
+object deleteOrder
+object DeleteUser
+object DropdownServlet
+object EditBasket
+object Login
+object Logout
+object orderList
+object OrderServlet
+object SeeOrderLineServlet
+
+
+AccountCreation o-- UserMapper
+changePassword o-- UserMapper
+
+Checkout o-- OrderMapper
+Checkout o-- Order
+Checkout o-- User
+
+CompleteOrder o-- OrderMapper
+
+CustomersServlet o-- UserMapper
+CustomersServlet o-- User
+
+deleteOrder o-- OrderMapper
+
+DeleteUser o-- UserMapper
+
+DropdownServlet o-- CupcakeMapper
+DropdownServlet o-- OrderLineDTO
+
+EditBasket o-- OrderLine
+EditBasket o-- OrderDTO
+
+Login o-- OrderDTO
+Login o-- UserMapper
+Login o-- User
+
+orderList o-- OrderMapper
+orderList o-- OrderListDTO
+
+OrderServlet o-- Order
+OrderServlet o-- CupcakeMapper
+
+SeeOrderLineServlet o-- OrderMapper
+
+UserMapper o-- User
+
+OrderMapper o-- ConnectionPool
+OrderMapper o-- OrderListDTO
+OrderMapper o-- OrderLineDTO
+OrderMapper o-- OrderLineSOFIA
+OrderMapper o-- User
+OrderMapper o-- OrderLine
+
+CupcakeMapper o-- ConnectionPool
+UserMapper o-- ConnectionPool
+
+
+Order o-- OrderLine
+OrderDTO o--OrderLine
+
+
+
+@enduml
