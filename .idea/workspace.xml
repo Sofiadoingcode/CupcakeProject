@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="startcode:war exploded" />
+      <artifact name="startcode:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/SeeOrderlineServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/control/SeeOrderlineServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/DTOs/OrderLineDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/DTOs/OrderLineDTOSOFIA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/IOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/IOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cupcakeProjektINTEL/src/main/java/dat/startcode/model/persistence/OrderMapper.java" afterDir="false" />
-    </list>
+    <list default="true" id="14f20a06-3156-46b7-8674-911e538258de" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,6 +188,7 @@
       <workItem from="1649197114564" duration="8676000" />
       <workItem from="1649333227681" duration="9270000" />
       <workItem from="1649401629507" duration="4941000" />
+      <workItem from="1650882698244" duration="646000" />
     </task>
     <servers />
   </component>
